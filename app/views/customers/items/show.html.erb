@@ -1,2 +1,19 @@
-<h1>Customers::Items#show</h1>
-<p>Find me in app/views/customers/items/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <p>ジャンル検索</p>
+    </div>
+    <div class="col-md-8">
+      <%#= attachment_image_tag item, :profile_image, :fill, 60, 60, format: 'jpeg' %>
+      <%= @item.name %>
+      <%= @item.explanation %>
+      <p>
+        ￥<%= @item.price %>（税込み）
+      </p>
+      <%= form_with model: @item do |f| %>
+       <%= f.select :amount, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], include_blank: "個数選択" %>
+       <%= f.submit 'カートに入れる'%>
+     <% end %>
+    </div>
+  </div>
+</div>
