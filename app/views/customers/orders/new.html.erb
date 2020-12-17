@@ -1,2 +1,21 @@
-<h1>Customers::Orders#new</h1>
-<p>Find me in app/views/customers/orders/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>注文情報入力</h1>
+      
+      <!--テーブル以降はテスト書き　テキトーに書いてます-->
+      
+      <table>
+       <tr>
+        <th><%= form.label "" %></th>
+        <td>
+          <%= form.radio_button :payment_method, "クレジットカード" %>
+          <%= form.label "クレジットカード" %>
+          <%= form.radio_button :payment_method, "クレジットカード" %>
+          <%= form.label "クレジットカード" %>
+      </td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</div>
