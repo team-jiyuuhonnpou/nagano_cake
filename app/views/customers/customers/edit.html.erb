@@ -1,2 +1,32 @@
-<h1>Customers::Customers#edit</h1>
-<p>Find me in app/views/customers/customers/edit.html.erb</p>
+<h2>登録情報編集</h2>
+
+<%= form_with model:@customer, local:true do |f| %>
+  <div class="form-group">
+    <%= f.label :名前 %>
+    (姓)<%= f.text_field :last_name, class: "form-control customer_last_name" %>(名)<%= f.text_field :first_name, class: "form-control customer_first_name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :フリガナ %>
+    (セイ)<%= f.text_field :kana_last_name, class: "form-control customer_kana_last_name" %>(メイ)<%= f.text_field :kana_first_name, class: "form-control customer_kana_first_name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :メールアドレス %>
+    <%= f.text_field :email, class: "form-control customer_email" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :郵便番号(ハイフンなし) %>
+    <%= f.text_field :postcode, class: "form-control customer_postcode" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :住所 %>
+    <%= f.text_field :street_address, class: "form-control customer_street_address" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :電話番号(ハイフンなし) %>
+    <%= f.text_field :phone_number, class: "form-control customer_phone_number" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit '編集内容を保存する', class: "btn btn-primary" %>
+  </div>
+<% end %>
+<%= link_to '退会する', customers_customers_unsubscribe_path(current_customer), class: "btn btn-sm btn-danger" %>
