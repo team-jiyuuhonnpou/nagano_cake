@@ -1,2 +1,21 @@
-<h1>Customers::CartItems#index</h1>
-<p>Find me in app/views/customers/cart_items/index.html.erb</p>
+<table class='table'>
+  <thead>
+    <tr>
+      <td>商品名</td>
+      <td>単価(税込)</td>
+      <td>数量</td>
+      <td>小計</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td><%= attachment_image_tag(item_name.item, :image, :fill, 50, 50) %><%= cart_item.item.item_name %></td>
+        <td><%= cart_item.item.non_taxed_price %></td>
+        <td><!-- 数量 --></td>
+        <td><!-- 小計 --></td>
+        <td><%= link_to '削除する', customers_cart_items_path, method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-sm btn-danger"%></td>
+      </tr>
+  </tbody>
+</table>
