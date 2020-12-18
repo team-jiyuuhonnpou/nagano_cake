@@ -1,22 +1,28 @@
 <h3>配送先登録/一覧</h3>
 
-<%= form_with model:@derivery, local:true do |f| %>
-  <div class="form-group">
-    <%= f.label :postcode, '郵便番号(ハイフンなし)' %>
-    <%= f.text_field :postcode, class: "form-control delivery_postcode" %>
+<div class='container'>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <%= form_with model:@delivery, url: '/customers/deliveries', method: :post, local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :postcode, '郵便番号(ハイフンなし)' %>
+          <%= f.text_field :postcode, class: "form-control delivery_postcode" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :address, '住所' %>
+          <%= f.text_field :address, class: "form-control delivery_address" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name, '宛名' %>
+          <%= f.text_field :name, class: "form-control delivery_name" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "登録する", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :address, '住所' %>
-    <%= f.text_field :address, class: "form-control delivery_address" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :name, '宛名' %>
-    <%= f.text_field :name, class: "form-control delivery_name" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "登録する", class: "btn btn-success" %>
-  </div>
-<% end %>
+</div>
 
 <table class='table'>
   <thead>
@@ -28,7 +34,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @deliveries.each do |derivery| %>
+    <% @deliveries.each do |delivery| %>
       <tr>
         <td><%= delivery.postcode %></td>
         <td><%= delivery.address %></td>
