@@ -12,7 +12,7 @@
       </thead>
 
       <tbody>
-        <%= @customers.each do |costomer| %>
+        <%= @customers.each do |customer| %>
         <tr>
           <td class="info col-xl-1"><%= customer.id %></td>
           <td class="text-left"><%= link_to admins_customer_path(customer) do %>

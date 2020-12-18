@@ -1,7 +1,7 @@
 <header>
   <nav class="nav navbar-nav navbar-left title">
     <% if admin_signed_in? %>
-      <%= link_to "NaganoCAKE", admin_homes_top_path %>
+      <%= link_to "NaganoCAKE", admins_homes_top_path %>
     <% else %>
       <%= link_to "NaganoCAKE", root_path %>
     <% end %>
@@ -13,20 +13,22 @@
       <% if customer_signed_in? %>
 
       <li>
-        ようこそ、<%= current_customer.first_name + current_customer.last_name %>さん！
+        ようこそ、<%= current_customer.last_name + current_customer.first_name %>さん！
       </li>
       <li>
-        <%= link_to "マイページ", customers_path(current_customer) %>
+        <%= link_to "マイページ", customers_customer_path(current_customer) %>
       </li>
       <li>
-        <%= link_to "商品一覧", items_path %>
+        <%= link_to "商品一覧", customers_items_path %>
       </li>
       <li>
-        <%= link_to "カート", customers_cart_items(current_customer) %>
+        <%= link_to "カート", customers_cart_items_path(current_customer) %>
       </li>
       <li>
         <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
       </li>
+
+      <% elsif admin_signed_in? %>
 
       <!--管理者がログインしているとき-->
       <li>
@@ -42,7 +44,7 @@
         <%= link_to "ジャンル一覧", admins_genres_path %>
       </li>
       <li>
-        <%= link_to "ログアウト", destroy_admin_session, method: :delete%>
+        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete%>
       </li>
 
       <% else %>
