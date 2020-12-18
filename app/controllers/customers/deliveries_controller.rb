@@ -3,8 +3,8 @@ class Customers::DeliveriesController < ApplicationController
   #before_action :authenticate_customer!
   
   def index
-    @delivary = Delivery.new
-    @deliveries = current_cunstomer.delivaries
+    @delivery = Delivery.new
+    @deliveries = current_customer.deliveries
   end
 
   def create
@@ -12,7 +12,7 @@ class Customers::DeliveriesController < ApplicationController
     if delivery.save
       redirect_to customers_deliveries_path
     else
-      @deliveries = current_cunstomer.delivaries
+      @deliveries = current_customer.deliveries
       render :index
     end
   end
