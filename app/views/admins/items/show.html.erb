@@ -2,11 +2,11 @@
 <h1>商品詳細</h1>
 <div>
   <div>
-    <%= attachment_image_tag(item, :image, fill, 100, 100) %>
+    <!--%= attachment_image_tag(item, :image, fill, 100, 100) %--->
   </div>
 
   <div>
-    <P>商品名 <%= @item.name %></P>
+    <P>商品名 <%= @item.item_name %></P>
   </div>
 
   <div>
@@ -18,13 +18,13 @@
   </div>
 
   <div>
-    <% prise = @item.non_taxed_price * 1.1 %>
-    <p>税込価格(税抜価格) <%= @item.non_taxed_price %>(<%= prise %>)円</p>
+    <% price = (@item.non_taxed_price * 1.1) .floor %>
+    <p>税込価格(税抜価格) <%= price %>(<%= @item.non_taxed_price %>)円</p>
   </div>
 
   <div>
     <p>販売ステータス <%= @item.is_active %></p>
   </div>
 
-  <%= link_to "編集する", edit_admins_item(@edit) %>
+  <%= link_to "編集する", edit_admins_item_path(@item) %>
 </div>
