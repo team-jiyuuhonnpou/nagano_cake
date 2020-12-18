@@ -1,1 +1,30 @@
-<h1>Admins::Items#show</h1>
+<!---Admins::Items#show--->
+<h1>商品詳細</h1>
+<div>
+  <div>
+    <%= attachment_image_tag(item, :image, fill, 100, 100) %>
+  </div>
+
+  <div>
+    <P>商品名 <%= @item.name %></P>
+  </div>
+
+  <div>
+    <p>商品説明 <%= @item.explanation %></p>
+  </div>
+
+  <div>
+    <p>ジャンル</p>
+  </div>
+
+  <div>
+    <% prise = @item.non_taxed_price * 1.1 %>
+    <p>税込価格(税抜価格) <%= @item.non_taxed_price %>(<%= prise %>)円</p>
+  </div>
+
+  <div>
+    <p>販売ステータス <%= @item.is_active %></p>
+  </div>
+  
+  <%= link_to "編集する", edit_admins_item(@edit) %>
+</div>
