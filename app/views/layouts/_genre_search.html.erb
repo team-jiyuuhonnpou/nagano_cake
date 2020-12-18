@@ -1,0 +1,25 @@
+<div class="genre_search">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <h4>ジャンル検索</h4>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% genres.each do |genre| %>
+        <% if genre.is_active == true %>
+        <tr>
+          <td>
+            <!--遷移先？？-->
+            <%= link_to "#", method: :get do %>
+              <%= genre.name %>
+            <% end %>
+          </td>
+        </tr>
+        <% else %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

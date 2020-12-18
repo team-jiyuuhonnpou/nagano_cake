@@ -1,0 +1,66 @@
+<header>
+  <nav class="nav navbar-nav navbar-left title">
+    <% if admin_signed_in? %>
+      <%= link_to "NaganoCAKE", admin_homes_top_path %>
+    <% else %>
+      <%= link_to "NaganoCAKE", root_path %>
+    <% end %>
+  </nav>
+
+  <nav>
+    <ul class="nav navbar-expand-lg mr-auto .justify-content-around">
+      <!--会員がログインしているとき-->
+      <% if customer_signed_in? %>
+
+      <li>
+        ようこそ、<%= current_customer.first_name + current_customer.last_name %>さん！
+      </li>
+      <li>
+        <%= link_to "マイページ", customers_path(current_customer) %>
+      </li>
+      <li>
+        <%= link_to "商品一覧", items_path %>
+      </li>
+      <li>
+        <%= link_to "カート", customers_cart_items(current_customer) %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
+      </li>
+
+      <!--管理者がログインしているとき-->
+      <li>
+        <%= link_to "商品一覧", admins_items_path %>
+      </li>
+      <li>
+        <%= link_to "会員一覧", admins_customers_path %>
+      </li>
+      <li>
+        <%= link_to "注文履歴一覧", admins_orders_path %>
+      </li>
+      <li>
+        <%= link_to "ジャンル一覧", admins_genres_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_admin_session, method: :delete%>
+      </li>
+
+      <% else %>
+
+      <!--ログインしていないとき-->
+      <li>
+        <%= link_to "About", about_path %>
+      </li>
+      <li>
+        <%= link_to "商品一覧", customers_items_path %>
+      </li>
+      <li>
+        <%= link_to "新規登録", new_customer_registration_path %>
+      </li>
+      <li>
+        <%= link_to "ログイン", new_customer_session_path %>
+      </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
