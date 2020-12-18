@@ -8,8 +8,8 @@ class Customers::DeliveriesController < ApplicationController
   end
 
   def create
-    @delivery = Derivery.new(derivery_params)
-    if delivery.save
+    @delivery = Delivery.new(delivery_params)
+    if @delivery.save
       redirect_to customers_deliveries_path
     else
       @deliveries = current_customer.deliveries
@@ -19,17 +19,17 @@ class Customers::DeliveriesController < ApplicationController
 
   def destroy
     @delivery = Delivery.find(params[:id])
-    @delivary.destroy
+    @delivery.destroy
      redirect_to customers_deliveries_path
   end
 
   def edit
-    @delivary = Delivery.find(params[:id])
+    @delivery = Delivery.find(params[:id])
   end
 
   def update
-    @delivary = Delivery.find(params[:id])
-    if @delivary.update(delivary_params)
+    @delivery = Delivery.find(params[:id])
+    if @delivery.update(delivary_params)
       redirect_to customers_deliveries_path
     else
       #@delivary = Delivery.find(params[:id])
@@ -39,7 +39,7 @@ class Customers::DeliveriesController < ApplicationController
   
   private
   def delivery_params
-    params.require(:delivary).permit(:postcode, :address, :name)
+    params.require(:delivery).permit(:postcode, :address, :name)
   end
   
 end
