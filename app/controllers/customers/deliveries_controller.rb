@@ -9,7 +9,7 @@ class Customers::DeliveriesController < ApplicationController
 
   def create
     @delivery = Delivery.new(delivery_params)
-    if @delivery.save
+    if @delivery.save!
       redirect_to customers_deliveries_path
     else
       @deliveries = current_customer.deliveries

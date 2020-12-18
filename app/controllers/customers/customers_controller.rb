@@ -9,7 +9,7 @@ class Customers::CustomersController < ApplicationController
   end
 
   def update
-    if @customer.update(customer_params)
+    if current_customer.update(customer_params)
       redirect_to customers_customer_path
     else
       render :edit
