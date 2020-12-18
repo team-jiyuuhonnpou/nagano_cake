@@ -3,7 +3,7 @@ class Customers::CartItemsController < ApplicationController
   #before_action :authenticate_customer!
   
   def index
-    @cart_items = current_cunstomer.cart_items
+    @cart_items = current_customer.cart_items
   end
   
   def create
@@ -26,7 +26,7 @@ class Customers::CartItemsController < ApplicationController
   end
 
   def destroy_all
-    @cart_items = current_cunstomer.cart_items
+    @cart_items = current_customer.cart_items
     @cart_items.destroy
      redirect_to customers_cart_items_path
   end
