@@ -1,7 +1,19 @@
-<h1>Customers::Homes#top</h1>
-<p>Find me in app/views/customers/homes/top.html.erb</p>
+<p>
+  ようこそ、NaganoCakeへ!<br>
+  このサイトは、ケーキ販売のECサイトになります。<br>
+  会員でない方も商品の閲覧はできますが、<br>
+  購入には会員登録が必要になります。<br>
+</p>
 
-<!-- 仮で作ったがremember_created_atがテーブルにないからログアウトできない -->
-<% if customer_signed_in? %>
-  <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
-<% end %>
+<h3>オススメ商品</h3>
+<table class="table">
+  <% @items.each do |item| %>
+    <tbody>
+      <tr>
+        <td><%= link_to customers_item_path(item) do %><%= attachment_image_tag(item, :image, :fill, 50, 50) %><% end %></td>
+        <td><%= item.item_name %></td>
+        <td>¥<%= item.non_taxed_price.to_s(:delimited) %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>

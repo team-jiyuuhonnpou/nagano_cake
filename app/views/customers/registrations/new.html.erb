@@ -41,4 +41,6 @@
 <% end %>
 
 <h3>既に登録済みの方</h3>
-<%= render "customers/shared/links" %>
+<%- if controller_name != 'sessions' %>
+  <p><%= link_to "こちら", new_session_path(resource_name) %>　から新規登録を行ってください。</p>
+<% end %>

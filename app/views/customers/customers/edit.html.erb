@@ -6,7 +6,7 @@
     </div>
   </div>
 </div>
-<%= form_with model:@customer, local:true do |f| %>
+<%= form_with model:current_customer, url: "/customers/customer", method: :patch, local:true do |f| %>
   <div class="form-group">
     <p>名前</p>
     <%= f.label :last_name, '(姓)' %><%= f.text_field :last_name, class: "form-control customer_last_name" %><%= f.label :first_name, '(名)' %><%= f.text_field :first_name, class: "form-control customer_first_name" %>
