@@ -1,7 +1,7 @@
 class Admins::ItemsController < ApplicationController
-  
+
   #before_action :authenticate_admin!
-  
+
   def index
     @items = Item.all
     @items = Item.page(params[:page]).reverse_order.per(10)
@@ -17,7 +17,7 @@ class Admins::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       flash[:notice] = "商品を登録しました"
       redirect_to admins_item_path(@item)
     else
@@ -37,7 +37,7 @@ class Admins::ItemsController < ApplicationController
       render :edit
     end
   end
-  
+
   private
   def item_params
     params.require(:item).permit(:genre_id, :item_name, :explanation, :image, :non_taxed_price, :is_active)
