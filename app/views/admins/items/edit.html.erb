@@ -1,33 +1,39 @@
 <!---Admins::Items#edit--->
 <h1>商品編集</h1>
 
-<div>
-  <%= form_with model:item, local:true do |f| %>
-    <div>
-      <%= attachment_image_tag(@item, :image, fill, 100, 100 %>
-      <%= f.attachment_field :image %>
-    </div>
-    <div>
-      <%= f.label "商品名" %>
-      <%= f.text_field :item_name %>
-    </div>
-    <div>
-      <%= f.label "商品説明" %>
-      <%= f.text_area :explanation %>
-    </div>
-    <div>
-      <%= f.label "ジャンル" %>
-      <%= f.colleciton_select :genre_id, genre.all, :id, :name %>
-    </div>
-    <div>
-      <%= f.label "税抜価格" %>
-      <%= f.text_field :non_taxed_price %>
-    </div>
-    <div>
-      <%= f.label "販売ステータス" %>
-      <%= f.select :is_active, [['販売中',true]['売切れ',false]] %>
-    </div>
-    <%= f.submit "変更を保存" %>
-  <%= end %>
+<div class="container">
+  <div class="row">
+    <%= form_with model:@item, url:'/admins/items', local:true do |f| %>
+      <div class="col-xs-4">
+        <div>
+          <%= attachment_image_tag(@item, :image, :fill, 100, 100) %>
+          <%= f.attachment_field :image %>
+        </div>
+      </div class="col-xs-4">
+        <div>
+          <%= f.label "商品名" %>
+          <%= f.text_field :item_name %>
+        </div>
+        <div>
+          <%= f.label "商品説明" %>
+          <%= f.text_area :explanation %>
+        </div>
+        <div>
+          <%= f.label "ジャンル" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択して下さい" %>
+        </div>
+        <div>
+          <%= f.label "税抜価格" %>
+          <%= f.text_field :non_taxed_price %>
+        </div>
+        <div>
+          <%= f.label "販売ステータス" %>
+          <%= f.select :is_active, { '販売中' => true, '売切れ' => false }, { include_blank: "選択して下さい" } %>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <%= f.submit "変更を保存" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
