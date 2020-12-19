@@ -18,7 +18,7 @@
           <%= @deliveries.name %>
           <%= f.radio_button :postcode, current_customer.postcode %>
           <%= f.label :postcode, "登録済み住所から選択"  %>
-          <%= f.collection_select :postcode, @deliveries.all, :id, :podtcode, include_blank: "選択して下さい" %>
+          <%= f.collection_select :postcode, @deliveries.all, :id, :postcode, include_blank: "選択して下さい" %>
 
           <%#= f.select ] %>
 
