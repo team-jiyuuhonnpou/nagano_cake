@@ -4,13 +4,14 @@ class Customers::DeliveriesController < ApplicationController
   
   def index
     @delivery = Delivery.new
-    @deliveries = Delivery.all
+    # @deliveries = Delivery.all
     # @deliveries = Delivery.where(customer_id: current_customer.id)
-    # @deliveries = current_customer.deliveries
+    @deliveries = current_customer.deliveries
   end
   
   def create
     @delivery = Delivery.new(delivery_params)
+    @delivery.customer_id = current_customer.id
     if @delivery.save
       redirect_to customers_deliveries_path
     else
@@ -41,7 +42,7 @@ class Customers::DeliveriesController < ApplicationController
   
   private
   def delivery_params
-    params.require(:delivery).permit(:postcode, :address, :name)
+    params.require(:delivery).permit(:postcode, :address, :name, :customer_id)
   end
   
 end
