@@ -31,8 +31,8 @@ Rails.application.routes.draw do
     get '/customers/unsubscribe' => 'customers#unsubscribe'
     patch '/customers/hide' => 'customers#hide'
     resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
-    resources :cart_items, only: [:index, :create, :destroy, :update]
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
+    resources :cart_items, only: [:index, :create, :destroy, :update]
   end
 
 end
