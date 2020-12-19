@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     get '/orders/thanks' => 'orders#thanks'
     resources :items, only: [:index, :show]
     resource :customer, only: [:show, :edit, :update]
-    get '/customers/unsubscribe' => 'custamers#unsubscribe'
+    get '/customers/unsubscribe' => 'customers#unsubscribe'
     patch '/customers/hide' => 'customers#hide'
     resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
     resources :cart_items, only: [:index, :create, :destroy, :update]

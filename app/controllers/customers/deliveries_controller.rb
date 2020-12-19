@@ -1,15 +1,17 @@
 class Customers::DeliveriesController < ApplicationController
   
-  #before_action :authenticate_customer!
+  before_action :authenticate_customer!
   
   def index
     @delivery = Delivery.new
-    @deliveries = current_customer.deliveries
+    @deliveries = Delivery.all
+    # @deliveries = Delivery.where(customer_id: current_customer.id)
+    # @deliveries = current_customer.deliveries
   end
-
+  
   def create
     @delivery = Delivery.new(delivery_params)
-    if @delivery.save!
+    if @delivery.save
       redirect_to customers_deliveries_path
     else
       @deliveries = current_customer.deliveries
@@ -29,7 +31,7 @@ class Customers::DeliveriesController < ApplicationController
 
   def update
     @delivery = Delivery.find(params[:id])
-    if @delivery.update(delivary_params)
+    if @delivery.update(delivery_params)
       redirect_to customers_deliveries_path
     else
       #@delivary = Delivery.find(params[:id])
