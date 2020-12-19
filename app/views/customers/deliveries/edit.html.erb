@@ -3,7 +3,7 @@
 <div class='container'>
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <%= form_with model:@delivery, local:true do |f| %>
+      <%= form_with model:@delivery, url: customers_delivery_path(@delivery), method: :patch, local:true do |f| %>
         <div class="form-group">
           <%= f.label :postcode, '郵便番号(ハイフンなし)' %>
           <%= f.text_field :postcode, class: "form-control delivery_postcode" %>

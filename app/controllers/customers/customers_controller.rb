@@ -20,7 +20,7 @@ class Customers::CustomersController < ApplicationController
   end
 
   def hide
-    @customer.update(is_unsubscribed: true)
+    current_customer.update(is_unsubscribed: true)
     reset_session
     flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
     redirect_to root_path

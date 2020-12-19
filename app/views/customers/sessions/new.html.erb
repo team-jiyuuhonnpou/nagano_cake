@@ -1,6 +1,5 @@
 <h3>会員の方はこちらからログイン</h3>
-<!-- 後でform_withに変更 -->
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: @customer, url: new_customer_session_path, local: true do |f| %>
 
   <div class="field">
     <%= f.label :email, 'メールアドレス' %>
