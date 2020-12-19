@@ -1,14 +1,14 @@
 class Customers::OrdersController < ApplicationController
-  
+
   #before_action :authenticate_customer!
-  
+
   def new
     @order = Order.new
-    @deliveries = current_cunstomer.deliveries
+    @deliveries = current_customer.deliveries
   end
 
   def confirm
-    @cart_items = current_cunstomer.cart_items
+    @cart_items = current_customer.cart_items
   end
 
   def create
@@ -21,14 +21,14 @@ class Customers::OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_cunstomer.orders
+    @orders = current_customer.orders
   end
 
   def show
     @order = Order.find(params[:id])
     @order_items = @order.order_items
   end
-  
+
   private
   def order_params
     params.require(:order).permit(:postcode, :address, :name, :payment_method)
