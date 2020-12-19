@@ -13,8 +13,9 @@
         <% price = (@item.non_taxed_price * 1.1).floor %>
         ￥<%= price %>（税込み）
       </p>
-      <%= form_with(model: [@item, @cart_item], url: customers_cart_items_path, local:true) do |f| %>
+      <%= form_with model: @cart_item, url: customers_cart_items_path, local:true do |f| %>
        <%= f.select :amount, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], include_blank: "個数選択" %>
+       <%= f.hidden_field :item_id, :value => @item.id %>
        <%= f.submit 'カートに入れる'%>
      <% end %>
     </div>
