@@ -5,15 +5,15 @@
         <h4>ジャンル検索</h4>
       </tr>
     </thead>
-    
+
     <tbody>
-      <% genres.each do |genre| %>
-        <% if genre.is_active == true %>
+      <% items.each do |genre| %>
+        <% if items.genre.is_active == true %>
         <tr>
           <td>
-            <!--遷移先？？-->
-            <%= link_to "#", method: :get do %>
-              <%= genre.name %>
+            <!--遷移先→genres#showに-->
+            <%= link_to admins_genre_path(item.genre.id), method: :get do %>
+              <%= items.genre.name %>
             <% end %>
           </td>
         </tr>

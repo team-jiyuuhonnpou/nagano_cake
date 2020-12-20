@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   devise_for :admins
-  devise_for :customers
+  devise_for :customers, :controllers => {
+    :sessions => 'customers/sessions'
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #homes
   root to: 'homes#top'
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     resources :customers, only: [:index, :show, :edit, :update]
     patch '/custamers/:id/hide' => 'customers#hide'
-    resources :genres, only: [:index, :create, :edit, :update, :destroy]
+    resources :genres, only: [:index, :create, :edit, :update, :destroy, :show]
     get '/homes/top' => 'homes#top'
   end
 

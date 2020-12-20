@@ -1,0 +1,10 @@
+<% if resource.errors.any? %>
+  <div class="alert alert-warning">
+    <ul style="color: red">
+      <p style="color: red">error!!</p>
+      <% resource.errors.full_messages.each do |massage| %>
+      <li><%= massage %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

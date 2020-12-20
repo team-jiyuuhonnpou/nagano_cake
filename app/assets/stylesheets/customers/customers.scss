@@ -8,11 +8,18 @@
   box-sizing: border-box;
 }
 
+// 退会ページ（unsubscribe）
 .withdrawal-content {
   margin-top: 200px;
 }
-
-.btn {
-  width: 150px;
+#withdrawal-title,
+#withdrawal-text {
+  font-size: 20px;
+}
+#withdrawal-text {
+  margin-top: 15px;
+}
+#withdrawal-btn {
+  width: 130px;
   margin: 15px;
 }

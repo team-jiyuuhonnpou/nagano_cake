@@ -1,61 +1,49 @@
-<div>
-  <div>
-    <!--errormsg-->
-    <h2><%= customer.first_name + customer.last_name %>さんの会員情報編集</h2>
+<div　class="row">
+  <div class="col-xl-12">
+    <%= render "layouts/error_msg", resource: @customer %>
+    <h2 class="head-line title_h2 text-center">
+      <%= @customer.last_name + @customer.first_name %>さんの会員情報編集
+    </h2>
 
-    <%= form_with(model: @customer, url :admins_customer_path, local: true , method: :patch) do |f| %>
+    <%= form_with model: @customer, url:admins_customer_path(@customer), local: true , method: :patch do |f| %>
 
-    <div>
-      <%= f.label :"会員ID" %>
-      <%= f.label :"#{@customer.id}" %>
+    <dl>
+      <dt><%= f.label :"会員ID" %></dt>
+      <dd><%= f.label :"#{@customer.id}" %></dd>
+
+      <dt><%= f.label :"氏名" %></dt>
+      <dd><%= f.text_field :last_name %>
+          <%= f.text_field :first_name %>
+      </dd>
+
+      <dt><%= f.label :"フリガナ"%></dt>
+      <dd><%= f.text_field :kana_last_name %>
+          <%= f.text_field :kana_first_name %>
+      </dd>
+
+      <dt><%= f.label :"郵便番号" %></dt>
+      <dd><%= f.text_field :postcode %></dd>
+
+      <dt><%= f.label :"住所" %></dt>
+      <dd><%= f.text_field :street_address %></dd>
+
+      <dt><%= f.label :"電話番号" %></dt>
+      <dd><%= f.text_field :phone_number %></dd>
+
+      <dt><%= f.label :"メールアドレス" %></dt>
+      <dd><%= f.text_field :email%></dd>
+
+      <dt><%= f.label :"会員ステータス" %></dt>
+      <dd><%= f.radio_button :is_unsubscribed, true %>
+          <%= f.label :is_unsubscribed, "有効", {value: :true} %>
+          <%= f.radio_button :is_unsubscribed, false %>
+          <%= f.label :is_unsubscribed, "退会済み", {value: :false}%>
+      </dd>
+
+    </dl>
+
+    <div class="actions col-xl-9 col-xl-offset-4 text-center">
+      <%= f.submit '変更を保存する', class: "btn btn-primary btn-sm w-auto" %>
     </div>
-
-    <dev>
-      <%= f.label :"氏名" %>
-      <%= f.text_fild :last_name %>
-      <%= f.text_fild :first_name %>
-    </dev>
-
-    <dev>
-      <%= f.label :"フリガナ"%>
-      <%= f.text_fild :kana_last_name %>
-      <%= f.text_fild :kana_first_name %>
-    </dev>
-
-    <div>
-      <%= f.label :"郵便番号" %>
-      <%= f.text_fild :postcode %>
-    </div>
-
-    <div>
-      <%= f.label :"住所" %>
-      <%= f.text_fild :street_address %>
-    </div>
-
-    <div>
-      <%= f.label :"電話番号" %>
-      <%= f.text_fild :phone_number %>
-    </div>
-
-    <div>
-      <%= f.label :"メールアドレス" %>
-      <%= f.text_fild :email%>
-    </div>
-
-    <div>
-      <%= f.label :"会員ステータス" %>
-        <%= f.radio_button :is_unsubscribed, true %>
-        <%= f.label :is_unsubscribed, "退会済み", {value: :true} %>
-        <%= f.radio_button :is_unsubscribed, false %>
-        <%= f.label :is_unsubscribed, "有効", {value: :false}%>
-    </div>
-  </div>
-
-    <div>
-      <%= f.sibmit '変更を保存する' %>
-    </div>
-  <% end %>
-    <div>
-      <%= link_to "戻る", admins_customer_path %>
-    </div>
+    <% end %>
 </div>

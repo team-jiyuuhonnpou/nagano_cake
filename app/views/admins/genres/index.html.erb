@@ -1,10 +1,10 @@
-<div>
-  <div>
-    <div>
+<div class="row">
+  <div class="col-xl-12">
+    <div class="head-line text-center">
       <h2>ジャンル一覧・追加</h2>
         <%= form_for @genre, :url => {:action => :create} do |f| %>
         <div class="col-xs-offset-1">
-          <i class="fas fa-candy-cane"></i>ジャンル
+          ジャンル
           <%= f.text_field :name  %>
             <%= f.radio_button :is_active, true %>
             <%= f.label :is_active, "有効", {value: :true, style: "display: inline-block;"} %>
@@ -13,7 +13,8 @@
           <%= f.submit "追加", class: "btn btn-info" %>
         </div>
       <% end %>
-      <table>
+    <div class="col-xl-8 col-xl-offset-2">
+      <table class="table rable-hover table-inverse table-bordered">
         <thead>
           <tr>
             <th>ジャンル</th>
@@ -21,10 +22,11 @@
             <th></th>
           </tr>
         </thead>
+
         <tbody>
-          <%= @genres.each do |genre| %>
+          <% @genres.each do |genre| %>
             <tr>
-              <td><%= genre.name %></td>
+              <td class="text-left"><%= genre.name %></td>
               <% if genre.is_active == true %>
                 <td>有効</td>
               <% elsif genre.is_active == false %>
