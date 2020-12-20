@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   has_many :order_items
-  belongs_to :cuntomer
+  belongs_to :customer
 
   validates :name, :address, :postcode, presence: true
 
