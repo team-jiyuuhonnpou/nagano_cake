@@ -1,13 +1,18 @@
-<h2><%= @customer.last.name + @customer.first_name %>さんの会員情報</h2>
-<div>
-    <div>
-        <table class="coustomer-table">
-            <tr><th>顧客ID</th><td><%= @customer.id%></td>
-                <td><% if @customer.is_unsubscribed == true %>
-                    <p>退会済み</p>
-                    <% elsif @customer.is_unsubscribed == false %>
-                    <p>有効</p
-                ></td>
+<h2 class="text-center"><%= @customer.last_name + @customer.first_name %>さんの会員情報</h2>
+<br>
+<br>
+<div class="row">
+    <div class="col-xl-8">
+        <table class="table table-bordered">
+            <tr><th>顧客ID</th>
+                <td><%= @customer.id%></td>
+                    <!--<td class="p-3 mb-2 bg-gradient-info text-white">
+                        <% #if @customer.is_unsubscribed == true %>
+                        <p>退会済み</p>
+                        <% #elsif @customer.is_unsubscribed == false %>
+                        <p>有効会員</p>
+                        <% #end %>
+                    </td> -->
             </tr>
             <tr><th>氏名</th><td><%= @customer.last_name + @customer.first_name %></td></tr>
             <tr><th>フリガナ</th><td><%= @customer.kana_last_name + @customer.kana_first_name %></td></tr>
@@ -17,9 +22,9 @@
             <tr><th>メールアドレス</th><td><%= @customer.email %></td></tr>
         </table>
 
-        <div>
-            <%= link_to "編集する", edit_admins_customer_path %>
-            <%= link_to "注文履歴一覧を見る", admins_orders_path %>
+        <div class="text-center">
+            <%= link_to "編集する", edit_admins_customer_path(@customer), class: "btn btn-primary btn-sm w-auto" %>
+            <%= link_to "注文履歴一覧を見る", admins_orders_path, class: "btn btn-primary btn-sm w-auto" %>
         </div>
     </div>
 </div>
