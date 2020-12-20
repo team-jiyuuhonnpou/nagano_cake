@@ -13,8 +13,25 @@ class Customers::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.save
-    redirect_to ustomers_orders_thanks_path
+    @deliveries = current_customer.deliveries
+    @order.fee=800
+    @order.customer_id = current_customer.id
+    if params["delivery_address"] == "1"
+      @order.name = current_customer.last_name + current_customer.first_name
+      @order.postcode = current_customer.postcode
+      @order.address = current_customer.street_address
+    elsif params["delivery_address"] == "2"
+      @order.name = Delivery.find(params[:order][:select_address]).name
+      @order.postcode = Delivery.find(params[:order][:select_address]).postcode
+      @order.address = Delivery.find(params[:order][:select_address]).address
+    elsif params["delivery_address"] == "3"
+      @order.name = delivery.name
+      @order.postcode = delivery.postcode
+      @order.address =  delivery.address
+    end
+
+    @order.save!
+    redirect_to  root_path
   end
 
   def thanks
@@ -31,6 +48,6 @@ class Customers::OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:postcode, :address, :name, :payment_method)
+     params.require(:order).permit(:postcode, :address, :name, :payment_method, :fee, :customer_id)
   end
 end
