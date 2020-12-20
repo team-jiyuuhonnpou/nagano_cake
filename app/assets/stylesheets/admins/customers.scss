@@ -5,3 +5,24 @@
    margin: auto;
    width: 50% !important;
 }
+
+.show-table {
+   margin: auto;
+   width: 50% !important;
+   border:none;
+}
+
+form {
+  padding:30px 50px;
+}
+
+form dl dt {
+  width: 165px;
+  padding:10px 0;
+  float:left;
+  clear:both;
+}
+
+form dl dd {
+  padding:10px 0;
+}
