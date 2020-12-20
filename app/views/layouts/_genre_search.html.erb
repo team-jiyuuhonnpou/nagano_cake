@@ -12,7 +12,7 @@
         <tr>
           <td>
             <!--遷移先→genres#showに-->
-            <%= link_to admin_genre_path(item.genre.id), method: :get do %>
+            <%= link_to admins_genre_path(item.genre.id), method: :get do %>
               <%= items.genre.name %>
             <% end %>
           </td>
