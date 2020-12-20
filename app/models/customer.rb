@@ -11,5 +11,10 @@ class Customer < ApplicationRecord
   validates :last_name, :first_name, :kana_last_name, :kana_first_name,
             :street_address, :encrypted_password, :email, :phone_number,
             presence: true
-
+            
+  # customerのis_unsubscribedがfalseならtrueを返す
+  def active_for_authentication?
+    super && (self.is_unsubscribed == false)
+  end
+  
 end
