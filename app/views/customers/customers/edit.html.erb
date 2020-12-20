@@ -4,12 +4,9 @@
   <div class="row">
     <div class="col-sm-12">
       <%= form_with model:current_customer, url: customers_customer_path, method: :patch, local:true do |f| %>
-        <form class=""
         <div class="form-group">
           <p>名前</p>
           <%= f.label :last_name, '(姓)' %><%= f.text_field :last_name, class: "form-control customer_last_name" %><%= f.label :first_name, '(名)' %><%= f.text_field :first_name, class: "form-control customer_first_name" %>
-        </div>
-        <div class="form-group">
           <%= f.label :フリガナ %>
           (セイ)<%= f.text_field :kana_last_name, class: "form-control customer_kana_last_name" %>(メイ)<%= f.text_field :kana_first_name, class: "form-control customer_kana_first_name" %>
         </div>

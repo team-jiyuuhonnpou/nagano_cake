@@ -4,8 +4,12 @@ class Customers::CartItemsController < ApplicationController
 
   def index
     @cart_items = current_customer.cart_items
+    @total_price = 0
+    @cart_items.each do |cart_item|
+      @total_price += (cart_item.item.non_taxed_price * 1.1).floor * cart_item.amount
+    end
   end
-
+  
   def create
     @cart_item = CartItem.new(cart_item_params)
     # @cart_item.item_id =

@@ -1,5 +1,6 @@
 <h3>会員の方はこちらからログイン</h3>
 <%= form_with model: @customer, url: new_customer_session_path, local: true do |f| %>
+<%= flash[:error] %>
 
   <div class="field">
     <%= f.label :email, 'メールアドレス' %>
