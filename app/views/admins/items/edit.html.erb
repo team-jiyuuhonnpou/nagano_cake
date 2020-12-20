@@ -3,7 +3,7 @@
 
 <div class="container">
   <div class="row">
-    <%= form_with model:@item, url:'/admins/items', local:true do |f| %>
+    <%= form_with model:@item, url: admins_item_path(@item), method: :patch, local:true do |f| %>
       <div class="col-xs-4">
         <div>
           <%= attachment_image_tag(@item, :image, :fill, 100, 100) %>
@@ -31,8 +31,8 @@
           <%= f.select :is_active, { '販売中' => true, '売切れ' => false }, { include_blank: "選択して下さい" } %>
         </div>
       </div>
-      <div class="col-xs-4">
-        <%= f.submit "変更を保存" %>
+      <div>
+        <%= f.submit "変更を保存", class: "btn btn-primary pull-right" %>
       </div>
     <% end %>
   </div>
