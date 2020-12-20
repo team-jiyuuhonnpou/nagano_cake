@@ -1,7 +1,7 @@
 <!---Admins::Items#index--->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
+<div>
+  <div>
+    <div>
       <h5>商品一覧</h5>
       <%= link_to new_admins_item_path do %>
         <i class="btn btn-plus-circle"></i>
@@ -26,9 +26,9 @@
             <th><%= item.genre.name %></th>
             <th><%= item.is_active %></th>
           </td>
+        </tbody>
         <% end %>
         <%= paginate @items %>
-        </tbody>
       </table>
     </div>
   </div>
