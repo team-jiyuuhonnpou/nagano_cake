@@ -18,13 +18,6 @@ class Admins::GenresController < ApplicationController
       render :index
     end
   end
-
-  def show
-    @items = Item.all
-    @items = Item.page(params[:page]).reverse_order.per(10)
-    @genre = Genre.find(params[:id])
-    @genres = @genre.items.order(creates_at: :desc).all.page(params[:page]).per(5)
-  end
   
   def edit
     @genre = Genre.find(params[:id])

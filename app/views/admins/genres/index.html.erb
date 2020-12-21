@@ -1,5 +1,9 @@
 <div class="row">
   <div class="col-xl-12">
+    <div class="genre_search">
+      <%= render 'layouts/genre_search', genres: @genres %>
+    </div>
+    
     <div class="head-line text-center">
       <h2>ジャンル一覧・追加</h2>
         <%= form_for @genre, :url => {:action => :create} do |f| %>
@@ -32,7 +36,7 @@
               <% elsif genre.is_active == false %>
                 <td>無効</td>
               <% end %>
-              <td><%= link_to "編集する", edit_admins_genre_path(genre) %></td>
+              <td><%= link_to "編集する", edit_admins_genre_path(genre), class: "btn btn-primary btn-sm w-auto" %></td>
             </tr>
           <% end %>
          </tbody>

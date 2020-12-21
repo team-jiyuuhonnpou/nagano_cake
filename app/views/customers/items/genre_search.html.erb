@@ -1,0 +1,24 @@
+<h2 class="head-line title_h2 text-center"><%= @genre.name %>一覧</h2>
+<div class="row">
+  <div class="col-xl-3">
+    <!--< render "layouts/genre_seach", genres: @genres -->
+  </div>
+
+  <div class=" col-xl-3 item-box text-center">
+    <% @items.each do |item| %>
+    <% if item.is_active == true %>
+    <div class="item-container">
+      <%= link_to customers_item_path(item), class: "btn-link" do %>
+        <%= item.item_name %>
+      <% end %>
+
+    <% if item.is_active == true %>
+      <p>¥<%= item.non_taxed_price * 1.1 %>(税込み)</p>
+    <% elsif items.is_active == false %>
+      <p>売り切れ中</p>
+    <% end %>
+    </div>
+  <% end %>
+  <% end %>
+  </div>
+</div>

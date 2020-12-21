@@ -21,8 +21,64 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #594B42;
+  background: #fffcf7;
+}
+
+.table {
+  color: #594B42;
+  border-color: #594B42;
+  background: #fffcf7;
 }
 
 .container {
   height: 100%;
+}
+
+.btn-primary {
+  background: #93A608; //ボタンの背景色
+  color: #fffcf7; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-success {
+  background: #5A7302; //ボタンの背景色
+  color: #fffcf7; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-danger {
+  background: #F2A950; //ボタンの背景色
+  color: #594B42; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-default {
+  background: #D0D8A2; //ボタンの背景色
+  color: #594B42; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #93A608;
+    background-color: #fffcf7;
+    border: none;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+    color: #5A7302;
+    background-color: #fffcf7;
+    border: none;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+    color: #F2A950;
+    background-color: #594B42;
+    border: none;
+}
+
+.btn-default:hover, .btn-defalut:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: #D0D8A2;
+    background-color: #594B42;
+    border: none;
 }
