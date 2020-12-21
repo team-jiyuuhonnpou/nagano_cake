@@ -23,7 +23,12 @@
   </div>
 
   <div>
-    <p>販売ステータス <%= @item.is_active %></p>
+    <p>販売ステータス </p>
+    <% if @item.is_active == true %>
+      <p>販売中</p>
+    <% else %>
+      <p>売切れ</p>
+    <% end %>
   </div>
 
   <%= link_to "編集する", edit_admins_item_path(@item) %>

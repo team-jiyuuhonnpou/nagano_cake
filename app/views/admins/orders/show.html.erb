@@ -1,2 +1,67 @@
-<h1>Admins::Orders#show</h1>
-<p>Find me in app/views/admins/orders/show.html.erb</p>
+<!---Admins::Orders#show--->
+<h5>注文履歴詳細</h5>
+
+<table class="table table-borderless">
+  <tr>
+    <th>購入者</th>
+    <td><%= @order.customer.last_name %><%= @order.customer.first_name %></td>
+  </tr>
+  <tr>
+    <th>配送先</th>
+    <td>〒<%= @order.postcode %> <%= @order.address %><%= @order.name %></td>
+  </tr>
+  <tr>
+    <th>支払方法</th>
+    <td><%= @order.payment_method %></td>
+  </tr>
+  <%= form_with model:@order, url: "/admins/orders/#{@order.id}", method: :patch, local:true do |f| %>
+  <tr>
+    <th>注文ステータス</th>
+    <td><%= f.select :status, { '入金待ち' => '入金待ち', '入金確認' => '入金確認', '製作中' => '製作中', '発送準備中' => '発送準備中', '発送済み' => '発送済み'}%>  <%= f.submit "更新" %></td>
+  </tr>
+  <% end %>
+</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>単価（税込）</th>
+      <th>数量</th>
+      <th>小計</th>
+      <th>制作ステータス</th>
+    </tr>
+  </thead>
+  <% @order_items.each do |order_item| %>
+  <tbody>
+    <tr>
+      <% sum = 0 %>
+      <td><%= order_item.item.name %></td>
+      <td><%= order_item.price %></td>
+      <td><%= order_item.amount %></td>
+      <td>
+        <% subtotal = (order_item.price * order_item.amount) %>
+        <%= subtotal %>
+      </td>
+      <%= form_with(model:order_items, url:"admins/orders/#{@order.id}/order_items/#{oeder_item.id}", method: :patch, local:true) do |f| %>
+      <td><%= f.select :production_status, { '製作不可' => '製作不可', '製作待ち' => '製作待ち', '製作中' => '製作中', '製作完了' => '製作完了'} %> <%= f.submit "更新" %></td>
+      <% end %>
+      <% sum = sum + sub_total %>
+      <%= sum %>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+<table class="table table-borderless">
+  <tr>
+    <th>商品合計</th>
+    <td></td>
+  </tr>
+  <tr>
+    <th>送料</th>
+    <td><%= @order.fee %></td>
+  </tr>
+  <tr>
+    <th>請求金額合計</th>
+    <td></td>
+  </tr>
+</table>
