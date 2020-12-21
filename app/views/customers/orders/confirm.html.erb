@@ -1,2 +1,72 @@
-<h1>Customers::Orders#confirm</h1>
-<p>Find me in app/views/customers/orders/confirm.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>注文情報確認画面</h3>
+        <div style = "display: inline-block;" >
+        <table>
+         <thead>
+          <tr>
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |item| %>
+            <tr>
+              <td>
+                <%= attachment_image_tag(item.item, :image, :fill, 120, 60, fallback: "no_image.jpg", size:'100x70') %>
+                <%= item.item.item_name %>
+              </td>
+              <td><%= (item.item.non_taxed_price * 1.1).floor %></td>
+              <td><%= item.amount %></td>
+              <td>
+                <% total_price = (item.item.non_taxed_price * 1.1 * item.amount).floor %>
+                <%= total_price %>
+              <td>
+            </tr>
+          <% end %>
+        </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div>
+        <table class="table" >
+        <tr>
+          <th>送料</th>
+          <td><%= 800 %></td>
+        </tr>
+        <tr>
+          <th>商品合計</th>
+          <td><%= @total_price %></td>
+        </tr>
+        <tr>
+          <th>請求金額</th>
+          <td><strong><%= @total_price += 800 %></strong></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="delivery_table">
+<h4>支払い方法</h4>
+<%= @order.payment_method %>
+
+<h4>お届け先</h4>
+<%= "〒" + @order.postcode %><br>
+<%= @order.address %><br>
+<%= @order.name %>
+</div>
+
+<%= form_with model: @order, url: customers_orders_path do |f| %>
+  <%#= f.hidden_field :delivery_address, :value => @order.delivery_address %>
+  <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+  <%= f.hidden_field :name, :value => @order.name %>
+  <%= f.hidden_field :postcode, :value => @order.postcode %>
+  <%= f.hidden_field :address, :value => @order.address %>
+
+  <%= f.submit "購入を確定する", class: "btn btn-success" %>
+<% end %>

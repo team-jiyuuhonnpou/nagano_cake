@@ -15,15 +15,22 @@
         </thead>
         <tbody>
         <% @orders.each do |order| %>
-          <td>
-            <th><%= order.created_at %></th>
-            <th>
-              <%= order.postcode %></br>
+          <tr>
+            <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+            <td>
+              <%= order.postcode %>
               <%= order.address %>
               <%= order.name %>
-            </th>
-            <th><%= order.order_items.items.name %></th>
-            <th><%= order.status %></th>
+            </td>
+            <td>
+              <% order.order_items.each do |order_item| %>
+              <%= order_item.item.item_name %>
+              <% end %>
+            </td>
+            <td>
+              <%= order.payment %>
+            </td>
+            <td><%= order.status %></td>
           </td>
         <% end %>
         <%#= paginate  %>
