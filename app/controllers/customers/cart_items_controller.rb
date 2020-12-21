@@ -9,7 +9,7 @@ class Customers::CartItemsController < ApplicationController
       @total_price += (cart_item.item.non_taxed_price * 1.1).floor * cart_item.amount
     end
   end
-  
+
   def create
     @cart_item = CartItem.new(cart_item_params)
     # @cart_item.item_id =
@@ -36,7 +36,7 @@ class Customers::CartItemsController < ApplicationController
     @cart_items.destroy_all
      redirect_to customers_cart_items_path
   end
-  
+
   private
   def cart_item_params
     params.require(:cart_item).permit(:amount, :item_id)

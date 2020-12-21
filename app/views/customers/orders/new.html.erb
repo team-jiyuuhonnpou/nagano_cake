@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <h2>注文情報入力</h2>
-        <%= form_with model: @order, url: customers_orders_path do |f| %>
+        <%= form_with model: @order, url: customers_orders_confirm_path do |f| %>
         <div>
           <h3>支払方法</h3>
           <%= f.radio_button :payment_method, "クレジットカード" %>
@@ -21,10 +21,13 @@
           <%= f.collection_select :select_address, @deliveries, :id, :address %>
           <br>
           <%= radio_button_tag("delivery_address", "3") %>
-          <%= label_tag :delivery_address, "新しいお届け先", value: "3" %>
-          <%= "郵便番号(ハイフンなし)" %><%= text_field_tag 'delivery[postcode]' %><br>
-          <%= "住所" %><%= text_field_tag 'delivery[address]' %><br>
-          <%= "宛名" %><%= text_field_tag 'delivery[name]' %>
+          <%= label_tag :delivery_address, "新しいお届け先", value: "3" %><br>
+          <%= f.label :postcode, "郵便番号(ハイフンなし)" %>
+          <%= f.text_field :postcode %><br>
+          <%= f.label :address,"住所" %>
+          <%= f.text_field :address %><br>
+          <%= f.label  :name, "宛名" %>
+          <%= f.text_field :name %>
           <br>
 
         </div>

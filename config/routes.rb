@@ -25,9 +25,10 @@ Rails.application.routes.draw do
   #custamer
   namespace :customers do
     #devise_for :customers
+    get '/orders/thanks' => 'orders#thanks'
     resources :orders, only: [:new, :create, :index, :show]
     post '/orders/confirm' => 'orders#confirm'
-    get '/orders/thanks' => 'orders#thanks'
+   
     resources :items, only: [:index, :show]
     resource :customer, only: [:show, :edit, :update]
     get '/customers/unsubscribe' => 'customers#unsubscribe'
