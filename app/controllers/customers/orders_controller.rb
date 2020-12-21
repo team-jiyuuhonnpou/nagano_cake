@@ -10,7 +10,7 @@ class Customers::OrdersController < ApplicationController
   def confirm
     @cart_items = current_customer.cart_items
   end
-
+  
   def create
     @order = Order.new(order_params)
     @deliveries = current_customer.deliveries
