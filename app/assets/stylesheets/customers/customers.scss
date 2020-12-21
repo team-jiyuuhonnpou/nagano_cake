@@ -8,18 +8,23 @@
   box-sizing: border-box;
 }
 
+// マイページ（show）
+.customer-title {
+  background-color: #ddd;
+}
+.customer-table tr th, .customer-table tr td {
+  border: 1px solid;
+}
+.customer-table tr th {
+  font-weight: normal;
+  background-color: #ddd;
+}
+
 // 退会ページ（unsubscribe）
 .withdrawal-content {
-  margin-top: 200px;
+  margin-top: 160px;
 }
-#withdrawal-title,
-#withdrawal-text {
-  font-size: 20px;
-}
-#withdrawal-text {
-  margin-top: 15px;
-}
-#withdrawal-btn {
+.withdrawal-btn .btn {
   width: 130px;
   margin: 15px;
 }
