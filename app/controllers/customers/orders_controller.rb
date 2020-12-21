@@ -6,12 +6,8 @@ class Customers::OrdersController < ApplicationController
     @order = Order.new
     @deliveries = current_customer.deliveries
   end
-
-  def confirm
-    @cart_items = current_customer.cart_items
-  end
   
-  def create
+  def confirm
     @order = Order.new(order_params)
     @cart_items = current_customer.cart_items
     @total_price = 0
