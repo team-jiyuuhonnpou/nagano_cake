@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     resources :customers, only: [:index, :show, :edit, :update]
     patch '/custamers/:id/hide' => 'customers#hide'
-    resources :genres, only: [:index, :create, :edit, :update, :destroy, :show]
+    resources :genres, only: [:index, :create, :edit, :update, :destroy]
     get '/homes/top' => 'homes#top'
   end
 
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     post '/orders/confirm' => 'orders#confirm'
    
     resources :items, only: [:index, :show]
+    get '/items/genre_search/:id' => 'items#genre_search'
     resource :customer, only: [:show, :edit, :update]
     get '/customers/unsubscribe' => 'customers#unsubscribe'
     patch '/customers/hide' => 'customers#hide'

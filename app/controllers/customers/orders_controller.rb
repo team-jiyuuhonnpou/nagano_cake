@@ -8,6 +8,10 @@ class Customers::OrdersController < ApplicationController
   end
 
   def confirm
+    @cart_items = current_customer.cart_items
+  end
+  
+  def create
     @order = Order.new(order_params)
     @cart_items = current_customer.cart_items
     @total_price = 0
