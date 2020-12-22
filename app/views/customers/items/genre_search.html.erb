@@ -5,9 +5,29 @@
     </div>
 
   <div class="col-md-9">
-    <strong class="admins-title-name"><%= @genre.name %>一覧(全<%= @items.count %>件)</strong>
-     <%= render "customers/items/index", items: @items%>
+  <% count = 0 %>
+  <% @items.each do |item| %>
+    <% if item.genre_id == @genre.id %>
+       <% count += 1 %>
+    <% end %>
+  <% end %>
+
+  <strong class="admins-title-name"><%= @genre.name %>一覧(全<%= count %>件)</strong>
+    <div class="index-item-box">
+      <% @items.each do |item| %>
+        <div class="item-index">
+          <% if item.genre_id == @genre.id %>
+            <% if item.is_active == true %>
+              <%= attachment_image_tag item, :image, :fill, 170, 180, format: 'jpeg' %></br>
+              <%= link_to customers_item_path(item.id) do %>
+                <%= item.item_name %></br>
+              <% end %>
+              ￥<%= number_with_delimiter(item.non_taxed_price) %>
+            <% end %>
+          <% end %>
+         </div>
+      <% end %>
+      </div>
+   </div>
   </div>
- </div>
- </div>
 </div>
