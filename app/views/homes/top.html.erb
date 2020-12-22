@@ -1,19 +1,39 @@
-<p>
-  ようこそ、NaganoCakeへ!<br>
-  このサイトは、ケーキ販売のECサイトになります。<br>
-  会員でない方も商品の閲覧はできますが、<br>
-  購入には会員登録が必要になります。<br>
-</p>
-
-<h3>オススメ商品</h3>
-<table class="table">
-  <% @items.each do |item| %>
-    <tbody>
-      <tr>
-        <td><%= link_to customers_item_path(item) do %><%= attachment_image_tag(item, :image, :fill, 50, 50) %><% end %></td>
-        <td><%= item.item_name %></td>
-        <td>¥<%= item.non_taxed_price.to_s(:delimited) %></td>
-      </tr>
-    </tbody>
-  <% end %>
-</table>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-lg-3">
+      <%= render "layouts/genre_search", genres: @genres %>
+    </div>
+    <div class="col-lg-8 main-visual">
+      <div class="main-visual-text text-center d-flex align-items-center justify-content-center">
+        ようこそ、NaganoCakeへ!<br>
+        このサイトは、ケーキ販売のECサイトになります。<br>
+        会員でない方も商品の閲覧はできますが、<br>
+        購入には会員登録が必要になります。<br>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <h3 class="offset-lg-3"><strong>オススメ商品</strong></h3>
+  </div>
+  <div class="row mt-3">
+    <div class="offset-lg-3">
+      <div class="items-box d-flex">
+        <% @items.each do |item| %>
+        <div>
+          <div class="mr-3">
+            <%= link_to customers_item_path(item) do %>
+              <%= attachment_image_tag(item, :image, size:'180x120') %>
+            <% end %></div>
+          <div class="mt-2"><%= item.item_name %></div>
+          <div class="mt-2">¥<%= item.non_taxed_price.to_s(:delimited) %></div>
+        </div>
+        <% end %>
+     </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="offset-lg-10">
+      <%= link_to 'もっと見る>', customers_items_path %>
+    </div>
+  </div>
+</div>
