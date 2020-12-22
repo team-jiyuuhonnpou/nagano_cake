@@ -94,18 +94,18 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%;
+  /*font-size: 62.5%;*/
 }
 
 .btn,
 a.btn,
 button.btn {
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
+  /*font-size: 1rem;*/
+  /*font-weight: 700;*/
+  /*line-height: 1.5;*/
+  /*position: relative;*/
   display: inline-block;
-  padding: 1rem 4rem;
+  /*padding: 1rem 4rem;*/
   cursor: pointer;
   /*-webkit-user-select: none;*/
   /*-moz-user-select: none;*/
@@ -123,8 +123,8 @@ button.btn {
 
 /*hover前設定*/
 a.btn-malformation {
-  font-size: 1.3rem;
-  padding: 2.5rem 3.5rem;
+  font-size: 1rem;
+  padding: 2rem 3rem;
 
   color: #F2DCC2;
   border-radius: 100% 80px / 80px 100%; /*デザイン調整*/
