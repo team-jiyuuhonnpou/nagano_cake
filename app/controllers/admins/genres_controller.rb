@@ -1,6 +1,6 @@
 class Admins::GenresController < ApplicationController
 
-  #before_action :authenticate_admin!, expect: [:show]
+  #before_action :authenticate_admin!
 
   def index
     @genre = Genre.new
@@ -18,7 +18,7 @@ class Admins::GenresController < ApplicationController
       render :index
     end
   end
-  
+
   def edit
     @genre = Genre.find(params[:id])
   end

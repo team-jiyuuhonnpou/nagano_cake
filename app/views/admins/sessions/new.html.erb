@@ -1,6 +1,7 @@
 <br>
+<br>
 <div class="row">
-  <div class="col-xl-11 col-xl-offset-1">
+  <div class="col-xl-12 text-center">
     <h2 class="head-line title_h2 text-center">管理者ログイン</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -8,13 +9,13 @@
       <%= render "layouts/error_msg", resource: resource %>
 
         <div class="field text-center">
-          <%= f.label :"メールアドレス", class: "col-xl-4 control-label text-left" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-8 form-control-static" %>
+          <%= f.label :"メールアドレス", class: "col-sm-4 control-label text-left" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-4 form-control-static" %>
         </div>
 
         <div class="field text-center">
-          <%= f.label :"パスワード", class: "col-xl-4 control-label text-left" %><br />
-          <%= f.password_field :password, autocomplete: "current-password", class: "col-sm-8 form-control-static" %>
+          <%= f.label :"パスワード", class: "col-sm-4 control-label text-left" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "col-sm-4 form-control-static" %>
           </div>
         <br>
         <% if devise_mapping.rememberable? %>

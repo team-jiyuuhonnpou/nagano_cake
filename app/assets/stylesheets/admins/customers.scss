@@ -1,14 +1,14 @@
 // Place all the styles related to the admins::customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.table {
+.customer-table {
    margin: auto;
-   width: 50% !important;
+   width: 50%;
 }
 
 .show-table {
    margin: auto;
-   width: 50% !important;
+   width: 50%;
    border:none;
 }
 
@@ -25,4 +25,9 @@ form dl dt {
 
 form dl dd {
   padding:10px 0;
+}
+
+.customer-box {
+  margin-right: auto;
+  margin-left : auto;
 }
