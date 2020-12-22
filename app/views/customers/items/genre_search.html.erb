@@ -1,4 +1,4 @@
-<h2 class="head-line title_h2 text-center"><%= @genre.name %>一覧</h2>
+<h2 class="col-lg-4 offset-lg-1 title_h2 text-center"><%= @genre.name %>一覧</h2>
 <div class="row">
   <div class="col-xl-3">
     <!--< render "layouts/genre_seach", genres: @genres -->
@@ -13,7 +13,7 @@
       <% end %>
 
     <% if item.is_active == true %>
-      <p>¥<%= item.non_taxed_price * 1.1 %>(税込み)</p>
+      <p>¥<%= (item.non_taxed_price * 1.1).floor.to_s(:delimited) %>(税込み)</p>
     <% elsif items.is_active == false %>
       <p>売り切れ中</p>
     <% end %>

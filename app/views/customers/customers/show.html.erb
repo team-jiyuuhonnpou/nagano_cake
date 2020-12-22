@@ -8,7 +8,7 @@
     <%= link_to 'パスワードを変更する', new_customer_password_path(current_customer), class: "btn btn-primary px-4" %>
   </div>
   <div class="row mb-4">
-    <table class="table customer-table ml-3">
+    <table class="table col-lg-8 customer-table ml-3">
       <tr>
         <th>氏名</th>
         <td><%= current_customer.last_name %>　<%= current_customer.first_name %></td>

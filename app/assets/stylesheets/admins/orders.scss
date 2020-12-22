@@ -1,3 +1,41 @@
 // Place all the styles related to the admins::orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*adminのorders/index*/
+.admins-order-body {
+  padding-top: 30px;
+}
+
+.admins-order-title-name {
+  margin-left: 15%;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: x-large;
+  background-color: #DEB887;
+}
+
+.admins-order-body .admins-order-index-table {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+
+/*adminのorders/show*/
+
+.admins-order-body .admins-order-show-info-table {
+  width: 60%;
+  margin-left: 12%;
+  margin-top: 15px;
+}
+
+.admins-order-total {
+  position: relative;
+}
+
+.admins-order-total-table {
+  position: absolute;
+  bottom: 0;
+}

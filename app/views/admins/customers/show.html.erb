@@ -1,26 +1,25 @@
 <br>
-<h1 class="text-center"><%= @customer.last_name + @customer.first_name %>さんの会員情報</h1>
+<h2 class="col-lg-4 offset-lg-1 title_h2 text-center"><%= @customer.last_name + @customer.first_name %>さんの会員情報</h2>
 <br>
 <br>
 <div class="row">
     <div class="col-xl-12">
-        <table class="admins-custommer-show-table table-bordered">
-            <tr><th>顧客ID</th>
-                <td><%= @customer.id%></td>
-                    <td>
+        <table class="admins-custommer-show-table table-bordered width="50" height="500"">
+            <tr><th class="text-center">顧客ID</th>
+                <td class="text-center"><%= @customer.id%>
                         <% if @customer.is_unsubscribed == true %>
-                        <p>退会済み</p>
+                        <p class="admins-customer-text">退会済み</p>
                         <% elsif @customer.is_unsubscribed == false %>
-                        <p>有効会員</p>
+                        <p class="admins-customer-text">有効会員</p>
                         <% end %>
                     </td>
             </tr>
-            <tr><th>氏名</th><td><%= @customer.last_name + @customer.first_name %></td></tr>
-            <tr><th>フリガナ</th><td><%= @customer.kana_last_name + @customer.kana_first_name %></td></tr>
-            <tr><th>郵便番号</th><td><%= @customer.postcode %></td></tr>
-            <tr><th>住所</th><td><%= @customer.street_address %></td></tr>
-            <tr><th>電話番号</th><td><%= @customer.phone_number %></td></tr>
-            <tr><th>メールアドレス</th><td><%= @customer.email %></td></tr>
+            <tr><th class="text-center">氏名</th><td class="text-center"><%= @customer.last_name + @customer.first_name %></td></tr>
+            <tr><th class="text-center">フリガナ</th><td class="text-center"><%= @customer.kana_last_name + @customer.kana_first_name %></td></tr>
+            <tr><th class="text-center">郵便番号</th><td class="text-center"><%= @customer.postcode %></td></tr>
+            <tr><th class="text-center">住所</th><td class="text-center"><%= @customer.street_address %></td></tr>
+            <tr><th class="text-center">電話番号</th><td class="text-center"><%= @customer.phone_number %></td></tr>
+            <tr><th class="text-center">メールアドレス</th><td class="text-center"><%= @customer.email %></td></tr>
         </table>
 
         <br>

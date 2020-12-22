@@ -2,11 +2,12 @@
 <div　class="row">
   <div class="col-xl-12">
     <%= render "layouts/error_msg", resource: @customer %>
-    <h1 class="head-line title_h2 text-center">
+    <h2 class="col-lg-4 offset-lg-1 title_h2 text-center">
       <%= @customer.last_name + @customer.first_name %>さんの会員情報編集
-    </h1>
+    </h2>
+  </div>
 
-  <div class="customer-box">
+  <div class="col-xl-12 admins-customer-box">
 
     <%= form_with model: @customer, url:admins_customer_path(@customer), local: true , method: :patch do |f| %>
 
@@ -45,7 +46,7 @@
 
     </dl>
 
-    <div class="actions col-xl-9 col-xl-offset-4 text-center">
+    <div class="actions col-xl-12">
       <%= f.submit '変更を保存する', class: "btn btn-success btn-sm w-auto" %>
     </div>
     <% end %>

@@ -14,18 +14,23 @@
   background-color: #DEB887;
 }
 
-.admins_item_index_table {
-  width: 80% !important;
+.admins-item-body .admins_item_index_table {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .plus_tag {
   text-align: right;
-  padding-right: 10%;
-  padding-bottom: 5px;
+  padding-right: 15%;
+  padding-bottom: 6px;
+}
+
+.rounded-circle {
+
 }
 
 .admin-item-show-body {
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .admin-item-name {

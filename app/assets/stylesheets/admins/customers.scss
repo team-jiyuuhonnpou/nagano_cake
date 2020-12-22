@@ -9,7 +9,7 @@
 .admins-custommer-show-table {
    margin: auto;
    width: 50%;
-   border:none;
+   border: none;
 }
 
 .admins-custommer-show-table th,
@@ -32,7 +32,23 @@ form dl dd {
   padding:10px 0;
 }
 
-.customer-box {
+.admins-customer-box {
+　display: block;
   margin-right: auto;
   margin-left : auto;
+  top: 50%;
+　left: 50%;
+}
+
+.admins-customer-text {
+    float: right;
+    padding-right: 5%;
+    background-color: #5A7302;
+    color: #F2DCC2;
+    text-align: center;
+}
+
+.title_h2 {
+  background-color: #F2A950;
+  border-radius: 60% 80% / 100% 80%;
 }
