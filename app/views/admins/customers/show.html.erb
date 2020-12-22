@@ -4,7 +4,7 @@
 <br>
 <div class="row">
     <div class="col-xl-12">
-        <table class="show-table table-bordered">
+        <table class="admins-custommer-show-table table-bordered">
             <tr><th>顧客ID</th>
                 <td><%= @customer.id%></td>
                     <td>
@@ -23,6 +23,7 @@
             <tr><th>メールアドレス</th><td><%= @customer.email %></td></tr>
         </table>
 
+        <br>
         <div class="text-center">
             <%= link_to "編集する", edit_admins_customer_path(@customer), class: "btn btn-primary btn-sm w-auto" %>
             <%= link_to "注文履歴一覧を見る", admins_orders_path, class: "btn btn-primary btn-sm w-auto" %>
