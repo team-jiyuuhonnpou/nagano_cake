@@ -1,9 +1,12 @@
+<br>
 <div　class="row">
   <div class="col-xl-12">
     <%= render "layouts/error_msg", resource: @customer %>
-    <h2 class="head-line title_h2 text-center">
+    <h1 class="head-line title_h2 text-center">
       <%= @customer.last_name + @customer.first_name %>さんの会員情報編集
-    </h2>
+    </h1>
+
+  <div class="customer-box">
 
     <%= form_with model: @customer, url:admins_customer_path(@customer), local: true , method: :patch do |f| %>
 
@@ -34,10 +37,10 @@
       <dd><%= f.text_field :email%></dd>
 
       <dt><%= f.label :"会員ステータス" %></dt>
-      <dd><%= f.radio_button :is_unsubscribed, true %>
-          <%= f.label :is_unsubscribed, "有効", {value: :true} %>
-          <%= f.radio_button :is_unsubscribed, false %>
-          <%= f.label :is_unsubscribed, "退会済み", {value: :false}%>
+      <dd><%= f.radio_button :is_unsubscribed, false %>
+          <%= f.label :is_unsubscribed, "有効", {value: :false} %>
+          <%= f.radio_button :is_unsubscribed, true %>
+          <%= f.label :is_unsubscribed, "退会済み", {value: :true}%>
       </dd>
 
     </dl>
@@ -46,4 +49,6 @@
       <%= f.submit '変更を保存する', class: "btn btn-success btn-sm w-auto" %>
     </div>
     <% end %>
+
+  </div>
 </div>

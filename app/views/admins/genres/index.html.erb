@@ -3,21 +3,21 @@
     <div class="genre_search">
       <%= render 'layouts/genre_search', genres: @genres %>
     </div>
-    
+
     <div class="head-line text-center">
-      <h2>ジャンル一覧・追加</h2>
+      <h1>ジャンル一覧・追加</h1>
         <%= form_for @genre, :url => {:action => :create} do |f| %>
-        <div class="col-xs-offset-1">
+        <div>
           ジャンル
           <%= f.text_field :name  %>
             <%= f.radio_button :is_active, true %>
             <%= f.label :is_active, "有効", {value: :true, style: "display: inline-block;"} %>
             <%= f.radio_button :is_active, false %>
             <%= f.label :is_active, "無効", {value: :false, style: "display: inline-block;"} %>
-          <%= f.submit "追加", class: "btn btn-info" %>
+          <%= f.submit "追加", class: "btn btn-success" %>
         </div>
       <% end %>
-    <div class="col-xl-8 col-xl-offset-2">
+    <div class="col-xl-12">
       <table class="table rable-hover table-inverse table-bordered">
         <thead>
           <tr>
