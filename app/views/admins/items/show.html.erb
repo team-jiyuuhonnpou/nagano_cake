@@ -1,35 +1,47 @@
 <!---Admins::Items#show--->
-<h1>商品詳細</h1>
-<div>
-  <div>
-    <%= attachment_image_tag(@item, :image, :fill, 100, 100) %>
-  </div>
+<div class="admins-item-body">
+  <strong class="admins-title-name">商品詳細</strong>
+  <div class="container">
+    <div class="row admin-item-show-body">
 
-  <div>
-    <P>商品名 <%= @item.item_name %></P>
-  </div>
+      <div class="col-lg-4">
+        <%= attachment_image_tag(@item, :image, size:'350x250') %>
+      </div>
 
-  <div>
-    <p>商品説明 <%= @item.explanation %></p>
-  </div>
+      <div class="col-lg-6">
+        <table class="admins_item_show_table">
+          <tr>
+            <th class="admin-item-name">商品名</th>
+            <td class="admin-item-explanation"><%= @item.item_name %></td>
+          </tr>
+          <tr>
+            <th class="admin-item-name">商品説明</th>
+            <td class="admin-item-explanation"><%= @item.explanation %></td>
+          </tr>
+          <tr>
+            <th class="admin-item-name">ジャンル</th>
+            <td class="admin-item-explanation"><%= @item.genre.name %></td>
+          </tr>
+          <tr>
+            <% price = (@item.non_taxed_price * 1.1) .floor %>
+            <th class="admin-item-name">税込価格(税抜価格)</th>
+            <td class="admin-item-explanation"><%= price %>(<%= @item.non_taxed_price %>)円</td>
+          </tr>
+          <tr>
+            <th class="admin-item-name">販売ステータス </th>
+            <% if @item.is_active == true %>
+              <td class="admin-item-explanation">販売中</td>
+            <% else %>
+              <td class="admin-item-explanation">売切れ</td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
 
-  <div>
-    <p>ジャンル <%= @item.genre.name %></p>
-  </div>
+      <div class="col-lg-2 admins-item-edit">
+        <%= link_to "編集する", edit_admins_item_path(@item), class: "btn btn-primary admins-item-edit-btn" %>
+      </div>
 
-  <div>
-    <% price = (@item.non_taxed_price * 1.1) .floor %>
-    <p>税込価格(税抜価格) <%= price %>(<%= @item.non_taxed_price %>)円</p>
+    </div>
   </div>
-
-  <div>
-    <p>販売ステータス </p>
-    <% if @item.is_active == true %>
-      <p>販売中</p>
-    <% else %>
-      <p>売切れ</p>
-    <% end %>
-  </div>
-
-  <%= link_to "編集する", edit_admins_item_path(@item) %>
 </div>

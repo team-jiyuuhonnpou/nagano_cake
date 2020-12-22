@@ -1,3 +1,53 @@
 // Place all the styles related to the admins::items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admins-item-body {
+  padding-top: 30px;
+}
+
+.admins-title-name {
+  margin-left: 15%;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: x-large;
+  background-color: #DEB887;
+}
+
+.admins_item_index_table {
+  width: 80% !important;
+}
+
+.plus_tag {
+  text-align: right;
+  padding-right: 10%;
+  padding-bottom: 5px;
+}
+
+.admin-item-show-body {
+  padding-top: 10%;
+}
+
+.admin-item-name {
+  padding-bottom: 50px;
+  font-size: large;
+  width: 40%;
+}
+
+.admin-item-explanation {
+  padding-bottom: 50px;
+  font-size: large;
+}
+
+.admins_item_show_table {
+  width: 100% 
+}
+
+.admins-item-edit {
+  position: relative;
+}
+
+.admins-item-edit-btn {
+  position: absolute;
+  bottom: 0;
+}
