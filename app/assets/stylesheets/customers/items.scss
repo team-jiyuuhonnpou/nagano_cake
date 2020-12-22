@@ -2,10 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-select.amount-select-button{
-  height: 50px;
+.amount-select-button{
+  height:50px;
+  line-height:50px;
 }
 
 .item-index{
+  margin: 15px;
+}
+
+.index-item-box{
   display: flex;
+  flex-wrap: wrap;
 }
