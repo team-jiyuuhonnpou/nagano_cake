@@ -48,7 +48,7 @@ class Customers::OrdersController < ApplicationController
       @order_item.amount = cart_item.amount
       @order_item.price = cart_item.item.non_taxed_price
       @order_item.order_id = @order.id
-      
+      @order_item.save
       end
       
 

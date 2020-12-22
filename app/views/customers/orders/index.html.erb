@@ -24,11 +24,11 @@
             </td>
             <td>
               <% order.order_items.each do |order_item| %>
-              <%= order_item.item.item_name %>
+              <%= order_item.item.item_name %></br>
               <% end %>
             </td>
             <td>
-              <%= order.payment %>円
+              <%= number_with_delimiter(order.payment+order.fee) %>円
             </td>
             <td><%= order.status %></td>
             <td id="order_index_button"><%= link_to "表示する", customers_order_path(order.id), class: "btn btn-primary" %></td>
