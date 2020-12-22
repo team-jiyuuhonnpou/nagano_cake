@@ -1,15 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
+
+    <div class="order_box">
       <h5>注文履歴一覧</h5>
-      <table>
+      <div class="order_box2">
+      <table class="order_index">
         <thead>
           <tr>
-            <th>注文日</th>
+            <th style="width: 100px;">注文日</th>
             <th>配送先</th>
             <th>注文商品</th>
             <th>支払金額</th>
-            <th>ステータス</th>
+            <th style="width: 100px;">ステータス</th>
             <th>注文詳細</th>
           </tr>
         </thead>
@@ -18,8 +18,8 @@
           <tr>
             <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
             <td>
-              <%= order.postcode %>
-              <%= order.address %>
+              〒<%= order.postcode %></br>
+              <%= order.address %></br>
               <%= order.name %>
             </td>
             <td>
@@ -28,14 +28,13 @@
               <% end %>
             </td>
             <td>
-              <%= order.payment %>
+              <%= order.payment %>円
             </td>
             <td><%= order.status %></td>
-          </td>
+            <td id="order_index_button"><%= link_to "表示する", customers_order_path(order.id), class: "btn btn-primary" %></td>
         <% end %>
         <%#= paginate  %>
         </tbody>
       </table>
-    </div>
-  </div>
+      </div>
 </div>
