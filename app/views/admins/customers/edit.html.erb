@@ -1,10 +1,11 @@
+<div class="top">
 <br>
 <div　class="row">
   <div class="col-xl-12">
     <%= render "layouts/error_msg", resource: @customer %>
-    <h2 class="col-lg-4 offset-lg-1 title_h2 text-center">
+    <strong class="admins-title-name">
       <%= @customer.last_name + @customer.first_name %>さんの会員情報編集
-    </h2>
+    </strong>
   </div>
 
   <div class="col-xl-12 admins-customer-box">
@@ -52,4 +53,5 @@
     <% end %>
 
   </div>
+</div>
 </div>
