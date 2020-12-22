@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'layouts/genre_search', genres: @genres %>
+    </div>
+    <div class="col-md-9">
+      <span>商品一覧(全<%= @items.count %>件)</span>
+      <div class="index-item-box">
+        <% @items.each do |item| %>
+         <div class="item-index">
+            <%= attachment_image_tag item, :image, :fill, 170, 180, format: 'jpeg' %></br>
+            <%= link_to customers_item_path(item.id) do %>
+            <%= item.item_name %></br>
+            <% end %>
+            ￥<%= number_with_delimiter(item.non_taxed_price) %>
+         </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
