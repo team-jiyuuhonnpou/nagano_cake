@@ -17,7 +17,7 @@
       <% if customer_signed_in? %>
 
       <li>
-        <h2>ようこそ、<%= current_customer.last_name + current_customer.first_name %>さん！</h2>
+        <h3>ようこそ、<%= current_customer.last_name + current_customer.first_name %>さん！</h3>
       </li>
       <li>
         <%= link_to "マイページ", customers_customer_path(current_customer), class: "btn btn-malformation btn-outline-secondary btn-sm w-auto" %>
