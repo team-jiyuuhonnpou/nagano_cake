@@ -1,3 +1,144 @@
 // Place all the styles related to the customers::orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// order indx　ページレイアウト
+
+.order_box{
+  width: 100%;
+  margin: auto, 0;
+}
+
+.order_box h5{
+  width: 180px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+  background-color: #F2A950;
+}
+
+.order_box2{
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 子要素の横並び・中央寄せ */
+}
+.order_index{
+  width: 70%;
+}
+
+
+.order_index tr th, .order_index tr td {
+  border: 1px solid;
+}
+
+.order_index thead th {
+  background-color: #ddd;
+}
+
+#order_index_button{
+  text-align: center;
+}
+
+// order show ぺージレイアウト
+
+.order-detail{
+  width: 100%;
+}
+
+.order-detail h3{
+  margin-left: 30px;
+}
+
+.order-info{
+  display: inline-block;
+  width: 50%;
+  margin-left: 30px;
+}
+
+.order-detail th {
+  background-color: #ddd;
+}
+
+.order-detail td{
+  padding: 5px;
+}
+
+.order-charge{
+  display: inline-block;
+  width: 30%;
+}
+
+.order-detail-table tr th, .order-detail-table tr td {
+  border: 1px solid;
+}
+
+.order-detail-item{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.order-detail-item{
+  width: 100%;
+}
+
+// order new レイアウト
+
+.order-information span{
+  margin-left: 50px;
+}
+.order-information p{
+  margin-left: 30px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+.order-information table{
+  margin-left: 50px ;
+}
+
+.order-information th{
+  padding-right: 20px;
+}
+
+// order confirm　レイアウト
+
+.order-confirm-table tr th, .order-confirm-table tr td {
+  border: 1px solid;
+  padding: 5px;
+}
+.order-confirm-table tr th{
+  background-color: #ddd;
+  line-height: 50px;
+}
+
+.order-confirm-table{
+  width: 630px;
+}
+
+.order-confirm-delivery_payment-table tr th, .order-confirm-delivery_payment-table tr td{
+  border: 1px solid;
+  padding: 5px;
+}
+
+.order-confirm-delivery_payment-table tr th{
+  background-color: #ddd;
+}
+
+.order-confirm-delivery_payment-table{
+  margin-top: 65px;
+  width: 250px;
+}
+
+.order-confirm-delivery_table{
+  margin-top: 20px;
+}
+
+// order thanks レイアウト
+.thanks h4{
+  margin: 250px;
+  text-align: center;
+}

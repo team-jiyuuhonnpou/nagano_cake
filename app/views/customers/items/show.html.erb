@@ -1,22 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <p>ジャンル検索</p>
+    <div class="col-md-2">
+      <p style="margin-top: 50px;">ジャンル検索</p>
     </div>
-    <div class="col-md-3">
-      <%= attachment_image_tag @item, :image, :fill, 60, 60, format: 'jpeg' %>
+    <div class="col-md-4">
+      <p style="margin-top: 50px;"><%= attachment_image_tag @item, :image, :fill, 100, 100, format: 'jpeg' %></p>
     </div>
-    <div class="col-md-5">
-      <%= @item.item_name %></br>
-      <%= @item.explanation %>
-      <p>
+    <div class="col-md-6">
+      <h4 style="margin-top: 50px; margin-bottom: 20px;"><%= @item.item_name %></h4>
+      <p style="margin-bottom:20px;"><%= @item.explanation %></p>
+      <p style="margin-bottom: 50px;">
         <% price = (@item.non_taxed_price * 1.1).floor %>
         ￥<%= price %>（税込み）
       </p>
       <%= form_with model: @cart_item, url: customers_cart_items_path, local:true do |f| %>
-       <%= f.select :amount, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], include_blank: "個数選択" %>
-       <%= f.hidden_field :item_id, :value => @item.id %>
-       <%= f.submit 'カートに入れる'%>
+      <%= f.select :amount, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], include_blank: "個数選択", class: "amount-select-button" %>
+      <%= f.hidden_field :item_id, :value => @item.id %>
+      <%= f.submit 'カートに入れる', class: "btn btn-success" %>
      <% end %>
     </div>
   </div>
