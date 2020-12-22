@@ -1,48 +1,50 @@
-<div class="container">
-  <div class="row">
-    <h5 class="col-lg-3 offset-lg-2 mt-5 mb-1"><strong class="delivery-title px-3">配送先登録/一覧</strong></h5>
-  </div>
-  
-  <%= form_with model:@delivery, url: customers_deliveries_path, method: :post, local:true do |f| %>
-    <div class="form-group row">
-      <%= f.label :postcode, '郵便番号(ハイフンなし)', class: "col-lg-3" %>
-      <%= f.text_field :postcode, class: "col-lg-3" %>
+<div class="top">
+  <div class="container">
+    <div class="row">
+      <h5 class="col-lg-3 offset-lg-2 mt-5 mb-1"><strong class="delivery-title px-3">配送先登録/一覧</strong></h5>
     </div>
-    <div class="form-group row">
-      <%= f.label :address, '住所', class: "col-lg-3" %>
-      <%= f.text_field :address, class: "col-lg-7" %>
-    </div>
-    <div class="form-group row">
-      <%= f.label :name, '宛名', class: "col-lg-3" %>
-      <%= f.text_field :name, class: "col-lg-3" %>
-    </div>
-    <div class="actions">
-      <%= f.submit "登録する", class: "btn btn-success" %>
-    </div>
-  <% end %>
-  
-  <div class="row">
-    <div class="col-lg-10">
-      <table class="table delivery-table w-100">
-        <thead>
-          <tr>
-            <th>郵便番号</th>
-            <th>住所</th>
-            <th>宛名</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @deliveries.each do |delivery| %>
+    
+    <%= form_with model:@delivery, url: customers_deliveries_path, method: :post, local:true do |f| %>
+      <div class="form-group row">
+        <%= f.label :postcode, '郵便番号(ハイフンなし)', class: "col-lg-3" %>
+        <%= f.text_field :postcode, class: "col-lg-3" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :address, '住所', class: "col-lg-3" %>
+        <%= f.text_field :address, class: "col-lg-7" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :name, '宛名', class: "col-lg-3" %>
+        <%= f.text_field :name, class: "col-lg-3" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "登録する", class: "btn btn-success" %>
+      </div>
+    <% end %>
+    
+    <div class="row">
+      <div class="col-lg-10">
+        <table class="table delivery-table w-100">
+          <thead>
             <tr>
-              <td><%= delivery.postcode %></td>
-              <td><%= delivery.address %></td>
-              <td><%= delivery.name %></td>
-              <td class="text-center"><%= link_to '編集する', edit_customers_delivery_path(delivery), class: "btn btn-primary mr-5" %><%= link_to '削除する', customers_delivery_path(delivery.id), method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-danger" %></td>
+              <th>郵便番号</th>
+              <th>住所</th>
+              <th>宛名</th>
+              <th></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% @deliveries.each do |delivery| %>
+              <tr>
+                <td><%= delivery.postcode %></td>
+                <td><%= delivery.address %></td>
+                <td><%= delivery.name %></td>
+                <td class="text-center"><%= link_to '編集する', edit_customers_delivery_path(delivery), class: "btn btn-primary mr-5" %><%= link_to '削除する', customers_delivery_path(delivery.id), method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-danger" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
