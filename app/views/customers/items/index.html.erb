@@ -6,6 +6,7 @@
     </div>
     <div class="col-md-9">
       <span>商品一覧(全<%= @items.count %>件)</span>
+
       <div class="index-item-box">
         <% @items.each do |item| %>
          <div class="item-index">
@@ -18,6 +19,8 @@
             <% end %>
          </div>
         <% end %>
+        ￥<%= item.non_taxed_price %>
+      <% end %>
       </div>
     </div>
   </div>

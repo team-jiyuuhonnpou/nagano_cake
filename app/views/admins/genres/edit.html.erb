@@ -1,8 +1,10 @@
-<h2 class="col-lg-4 offset-lg-1 title_h2 text-center">ジャンル編集</h2>
+<div class="top">
+<br>
+<strong class="admins-title-name">ジャンル編集</strong>
 
 <%= form_for @genre, :url => {:action => :update} do |f| %>
 
-<!--error msg-->
+<!--error msg!-->
 <%= render "layouts/error_msg", resource: @genre %>
 
   <div class="text-center">
@@ -15,3 +17,4 @@
       <%= f.submit "変更を保存する", class: "btn btn-success btn-sm w-auto" %>
     </div>
   <% end %>
+</div>

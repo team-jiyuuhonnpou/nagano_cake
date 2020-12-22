@@ -1,8 +1,9 @@
+<div class="top">
 <div class="row">
   <div class="col-xl-12">
-
+    <br>
     <div>
-      <h2 class="col-lg-4 offset-lg-1 title_h2 text-center" >ジャンル一覧・追加</h2>
+      <strong class="admins-title-name" >ジャンル一覧・追加</strong>
 
       <div class="col-lg-12 text-center">
         <%= form_for @genre, :url => {:action => :create} do |f| %>
@@ -19,7 +20,8 @@
       </div>
 
     <div class="col-lg-12 text-center">
-      <table class="genre-table rable-hover table-inverse table-bordered width="100" height="100"">
+      <div class="admins-item-body">
+      <table class="table admins-custommer-show-table">
         <thead>
           <tr>
             <th>ジャンル</th>
@@ -42,6 +44,9 @@
           <% end %>
          </tbody>
        </table>
+      </div>
+
      </div>
   </div>
+</div>
 </div>

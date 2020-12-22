@@ -1,10 +1,11 @@
+<div class="top">
 <br>
-<h2 class="col-lg-4 offset-lg-1 title_h2 text-center"><%= @customer.last_name + @customer.first_name %>さんの会員情報</h2>
-<br>
+<strong class="admins-title-name"><%= @customer.last_name + @customer.first_name %>さんの会員情報</strong>
 <br>
 <div class="row">
     <div class="col-xl-12">
-        <table class="admins-custommer-show-table table-bordered width="50" height="500"">
+        <div class="admins-item-body">
+        <table class="table admins-custommer-show-table">
             <tr><th class="text-center">顧客ID</th>
                 <td class="text-center"><%= @customer.id%>
                         <% if @customer.is_unsubscribed == true %>
@@ -21,11 +22,13 @@
             <tr><th class="text-center">電話番号</th><td class="text-center"><%= @customer.phone_number %></td></tr>
             <tr><th class="text-center">メールアドレス</th><td class="text-center"><%= @customer.email %></td></tr>
         </table>
-
+        </div>
+        
         <br>
         <div class="text-center">
             <%= link_to "編集する", edit_admins_customer_path(@customer), class: "btn btn-primary btn-sm w-auto" %>
             <%= link_to "注文履歴一覧を見る", admins_orders_path, class: "btn btn-primary btn-sm w-auto" %>
         </div>
     </div>
+</div>
 </div>
