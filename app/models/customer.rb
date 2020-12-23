@@ -11,6 +11,7 @@ class Customer < ApplicationRecord
   validates :last_name, :first_name, :kana_last_name, :kana_first_name, :postcode,
             :street_address, :encrypted_password, :email, :phone_number,
             presence: true
+            
   # 全角カタカナ
   VALID_KATAKANA_REGEX = /\A[ァ-ヶー－]+\z/
   validates :kana_last_name, :kana_first_name, format: { with: VALID_KATAKANA_REGEX }
@@ -23,10 +24,10 @@ class Customer < ApplicationRecord
   # 電話番号(ハイフンなし10桁or11桁)
   VALID_PHONE_NUMBER_REGEX = /\A\d{10,11}\z/
   validates :phone_number, format: { with: VALID_PHONE_NUMBER_REGEX }
-            
+
   # customerのis_unsubscribedがfalseならtrueを返す
   def active_for_authentication?
     super && (self.is_unsubscribed == false)
   end
-  
+
 end

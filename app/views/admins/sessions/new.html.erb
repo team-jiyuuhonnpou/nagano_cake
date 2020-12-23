@@ -1,12 +1,15 @@
+<div class="top">
+  <strong class="admins-title-name">管理者ログイン</strong>
 <br>
 <br>
 <div class="row">
   <div class="col-xl-12 text-center">
-    <strong class="admins-title-name">管理者ログイン</strong>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <!--error mag-->
-      <%= render "layouts/error_msg", resource: resource %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <% end %>
 
         <div class="field text-center">
           <%= f.label :"メールアドレス", class: "col-sm-4 control-label text-left" %><br />
@@ -33,4 +36,5 @@
       <%= render "admins/shared/links" %>
 
   </div>
+</div>
 </div>

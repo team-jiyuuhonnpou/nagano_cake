@@ -15,9 +15,18 @@
   </head>
 
   <body>
-    <div class="header">
-      <%= render "layouts/header" %>
+    <div id="wrapper">
+      <div class="header">
+        <%= render "layouts/header" %>
+      </div>
+      <%= yield %>
+    
     </div>
-    <%= yield %>
+    
+    <footer>
+      <div class="footer-text text-center">
+        Copyright © nagano CAKE Inc.
+      </div>
+    </footer>
   </body>
 </html>
