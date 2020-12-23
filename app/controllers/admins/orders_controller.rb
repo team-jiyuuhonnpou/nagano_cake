@@ -4,7 +4,7 @@ class Admins::OrdersController < ApplicationController
 
   def index
     @orders = Order.all
-    @orders = Order.page(params[:page]).reverse_order.per(10)
+    @orders = Order.page(params[:page]).reverse_order.per(8)
   end
 
   def show
