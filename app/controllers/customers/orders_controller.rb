@@ -1,6 +1,6 @@
 class Customers::OrdersController < ApplicationController
 
-  #before_action :authenticate_customer!
+  before_action :authenticate_customer!
 
   def new
     @order = Order.new
@@ -31,6 +31,9 @@ class Customers::OrdersController < ApplicationController
 
   def create
     @cart_items = current_customer.cart_items
+    unless @cart_items.present?
+      return render "customers/cart_items/index"
+    end
     @total_price = 0
     @cart_items.each do |cart_item|
       @total_price += (cart_item.item.non_taxed_price * 1.1).floor * cart_item.amount
@@ -43,17 +46,17 @@ class Customers::OrdersController < ApplicationController
 
     if @order.save
       @cart_items.each do |cart_item|
-      @order_item = OrderItem.new
-      @order_item.item_id = cart_item.item_id
-      @order_item.amount = cart_item.amount
-      @order_item.price = cart_item.item.non_taxed_price
-      @order_item.order_id = @order.id
-      @order_item.save
+        @order_item = OrderItem.new
+        @order_item.item_id = cart_item.item_id
+        @order_item.amount = cart_item.amount
+        @order_item.price = cart_item.item.non_taxed_price
+        @order_item.order_id = @order.id
+        @order_item.save
       end
-      
-
       @cart_items.destroy_all
       redirect_to  customers_orders_thanks_path
+    else
+      render "new"
     end
 
 
@@ -65,12 +68,11 @@ class Customers::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders.all
+    @orders = Order.page(params[:page]).reverse_order.per(10)
   end
 
   def show
-    # @order = Order.find(params[:id])
-    # @order_items = @order.order_items
-     @order = Order.find(params[:id])
+    @order = Order.find(params[:id])
     @order_items = @order.order_items
     @total_price = @order_items.sum(:price)
   end

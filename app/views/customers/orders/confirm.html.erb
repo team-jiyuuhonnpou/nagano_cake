@@ -52,17 +52,17 @@
 </div>
 
 <div class="order-confirm-delivery_table">
-<h4>支払い方法</h4>
-<p>
-<%= @order.payment_method %>
-</p>
-
-<h4>お届け先</h4>
-<p>
-<%= "〒" + @order.postcode %><br>
-<%= @order.address %><br>
-<%= @order.name %>
-</p>
+  <h4>支払い方法</h4>
+  <p>
+    <%= @order.payment_method %>
+  </p>
+  
+  <h4>お届け先</h4>
+  <p>
+    <%= "〒" + @order.postcode %><br>
+    <%= @order.address %><br>
+    <%= @order.name %>
+  </p>
 </div>
 
 <%= form_with model: @order, url: customers_orders_path do |f| %>

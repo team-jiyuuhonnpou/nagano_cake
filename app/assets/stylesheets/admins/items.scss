@@ -14,6 +14,11 @@
   background-color: #DEB887;
 }
 
+.admins-alert {
+  width: 60%;
+  margin: 0 auto;
+}
+
 .admins-item-body .admins_item_index_table {
   width: 80%;
   margin: 0 auto;
@@ -25,8 +30,8 @@
   padding-bottom: 6px;
 }
 
-.rounded-circle {
-
+.plus_tag .btn {
+  color: #000000;
 }
 
 .admin-item-show-body {
@@ -55,4 +60,10 @@
 .admins-item-edit-btn {
   position: absolute;
   bottom: 0;
+}
+
+
+
+.admin-item-edit-body {
+  padding-top: 25px;
 }

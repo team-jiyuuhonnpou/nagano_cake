@@ -5,7 +5,7 @@
       <%= render 'layouts/genre_search', genres: @genres %>
     </div>
     <div class="col-md-9">
-      <span>商品一覧(全<%= @items.count %>件)</span>
+      <p class="customers-title-name">商品一覧(全<%= @items.count %>件)</p>
 
       <div class="index-item-box">
         <% @items.each do |item| %>
@@ -18,9 +18,11 @@
               ￥<%= number_with_delimiter(item.non_taxed_price) %>
             <% end %>
          </div>
-
-      <% end %>
+        <% end %>
       </div>
+      
     </div>
   </div>
+
 </div>
+  <%= paginate(@items) %>
