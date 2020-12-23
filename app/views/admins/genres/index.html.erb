@@ -6,6 +6,8 @@
       <strong class="admins-title-name" >ジャンル一覧・追加</strong>
 
       <div class="col-lg-12 text-center">
+        <%= render "layouts/error_msg", resource: @genre %>
+        
         <%= form_for @genre, :url => {:action => :create} do |f| %>
         <div>
           ジャンル
@@ -45,8 +47,8 @@
          </tbody>
        </table>
       </div>
-
      </div>
+     <div clas="text-center"><%= paginate @genres %></div>
   </div>
 </div>
 </div>
