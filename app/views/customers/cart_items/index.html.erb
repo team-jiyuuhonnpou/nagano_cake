@@ -3,7 +3,9 @@
     <div class="row pt-5 pb-4">
       <h5 class="col-lg-3 offset-lg-1"><strong class="cart-item-title px-3">ショッピングカート</strong></h5>
       <div class="col-lg-3 offset-lg-5">
-      <%= link_to 'カートを空にする', "/customers/cart_items/destroy_all", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-danger" %>
+      <% if @cart_items.exists? %>
+        <%= link_to 'カートを空にする', "/customers/cart_items/destroy_all", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-danger" %>
+      <% end %>
       </div>
     </div>
     <div class="row mb-3">
@@ -18,6 +20,7 @@
           </tr>
         </thead>
         <tbody>
+        <% if @cart_items.exists? %>
           <% @cart_items.each do |cart_item| %>
             <tr>
               <td colspan="3"><%= attachment_image_tag(cart_item.item, :image, :fill, 60, 50) %>　<%= cart_item.item.item_name %></td>
@@ -32,6 +35,11 @@
               <td class="text-center"><%= link_to '削除する', "/customers/cart_items/#{cart_item.id}", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-sm btn-danger px-3"%></td>
             </tr>
           <% end %>
+        <% else %>
+          <tr>
+            <td colspan="7" class="text-center"><h5 class="pt-1">カートは空です</h5></td>
+          </tr>
+        <% end %>
         </tbody>
       </table>
     </div>
@@ -48,7 +56,9 @@
     </div>
     <div class="row">
       <div class="col-lg-12 text-center">
+        <% if @cart_items.exists? %>
         <%= link_to '情報入力に進む', new_customers_order_path, class: "btn btn-success btn-lg px-5 py-3" %>
+        <% end %>
       </div>
     </div>
   </div>
