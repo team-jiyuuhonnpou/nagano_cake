@@ -9,7 +9,7 @@
     </tr>
     <tr>
       <th class="admins-order-show-info">配送先</th>
-      <td class="admins-order-show-info">〒<%= @order.postcode %> <%= @order.address %><%= @order.name %></td>
+      <td class="admins-order-show-info">〒<%= @order.postcode %> <%= @order.address %><br><%= @order.name %></td>
     </tr>
     <tr>
       <th class="admins-order-show-info">支払方法</th>
@@ -18,12 +18,12 @@
     <%= form_with model:@order, url: "/admins/orders/#{@order.id}", method: :patch, local:true do |f| %>
     <tr>
       <th class="admins-order-show-info">注文ステータス</th>
-      <td class="admins-order-show-info"><%= f.select :status, { '入金待ち' => '入金待ち', '入金確認' => '入金確認', '製作中' => '製作中', '発送準備中' => '発送準備中', '発送済み' => '発送済み'}%>  <%= f.submit "更新" %></td>
+      <td class="admins-order-show-info"><%= f.select :status, { '入金待ち' => '入金待ち', '入金確認' => '入金確認', '製作中' => '製作中', '発送準備中' => '発送準備中', '発送済み' => '発送済み'}%>  <%= f.submit "更新", class: "btn btn-primary pull-right" %></td>
     </tr>
     <% end %>
   </table>
   <div class="container">
-    <div class="row">
+    <div class="row admins-order-table">
       <div class="col-lg-8">
         <table class="table">
           <thead>
@@ -40,14 +40,14 @@
             <% price = (order_item.item.non_taxed_price * 1.1).floor %>
             <tr>
               <td><%= order_item.item.item_name %></td>
-              <td><%= price %></td>
+              <td><%= price.to_s(:delimited) %></td>
               <td><%= order_item.amount %></td>
               <td>
                 <% subtotal = (price * order_item.amount) %>
-                <%= subtotal %>
+                <%= subtotal.to_s(:delimited) %>
               </td>
               <%= form_with model:order_item, url:"/admins/orders/#{@order.id}/order_items/#{order_item.id}", method: :patch, local:true do |f| %>
-              <td><%= f.select :production_status, { '制作不可' => '制作不可', '製作待ち' => '製作待ち', '製作中' => '製作中', '製作完了' => '製作完了'} %> <%= f.submit "更新" %></td>
+              <td><%= f.select :production_status, { '制作不可' => '制作不可', '製作待ち' => '製作待ち', '製作中' => '製作中', '製作完了' => '製作完了'} %> <%= f.submit "更新", class: "btn btn-primary pull-right" %></td>
             </tr>
   　　        <% end %>
           </tbody>
@@ -58,7 +58,7 @@
         <table class="table table-borderless admins-order-total-table">
           <tr>
             <th>商品合計</th>
-            <td><%= @total_price %>円</td>
+            <td><%= @total_price.to_s(:delimited) %>円</td>
           </tr>
           <tr>
             <th>送料</th>
@@ -66,7 +66,7 @@
           </tr>
           <tr>
             <th>請求金額合計</th>
-            <td><%= @total_price += 800 %>円</td>
+            <td><%= (@total_price += 800).to_s(:delimited) %>円</td>
           </tr>
         </table>
       </div>

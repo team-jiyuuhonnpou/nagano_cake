@@ -6,15 +6,13 @@ class Admins::OrderItemsController < ApplicationController
     @order_item = OrderItem.find(params[:id])
     @order = @order_item.order
     @order_item.update(order_item_params)
+    count = @order.order_items.select(:production_status).distinct.count
       if @order_item.production_status == "製作中"
         @order.update(status: 2)
-      else
-        item = @order.order_items.select(:production_status).distinct
-        item == 1 && @order_item.production_status == "製作完了"
+      elsif count == 1 && @order_item.production_status == "製作完了"
         @order.update(status: 3)
       end
       redirect_to  admins_order_path(@order)
-      #render相談
   end
 
   private

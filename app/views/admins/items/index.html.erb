@@ -2,7 +2,11 @@
 <div class="admins-item-body">
   <!---タイトル--->
   <strong class="admins-title-name">商品一覧</strong>
+
+  <!--新規登録遷移ボタン-->
   <div class="plus_tag"><%= link_to "＋", new_admins_item_path, class: 'btn btn-outline-dark rounded-circle p-0 btn-lg', :style=>"width:2rem;height:2rem;" %></div>
+
+  <!--商品一覧-->
   <table class="table admins_item_index_table">
     <thead>
       <tr>
@@ -18,13 +22,13 @@
       <tr>
         <td><%= item.id %></td>
         <td><%= link_to item.item_name, admins_item_path(item) %></td>
-        <td><%= item.non_taxed_price %></td>
+        <td><%= item.non_taxed_price.to_s(:delimited) %></td>
         <td><%= item.genre.name %></td>
         <td>
           <% if item.is_active == true %>
             <p>販売中</p>
           <% else %>
-            <p>売切れ</p>
+            <p>販売停止中</p>
           <% end %>
         </td>
       </tr>
