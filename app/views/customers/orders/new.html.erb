@@ -2,7 +2,10 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>注文情報入力</h2>
+      <p class="customers-title-name" style="margin-top:50px;">注文情報入力</p>
+      <% if @order.errors.any? %>
+      	<%= render 'layouts/error_msg', resource: @order %>
+      <% end %>
         <%= form_with model: @order, url: customers_orders_confirm_path do |f| %>
         <div>
           <h3>支払方法</h3>
