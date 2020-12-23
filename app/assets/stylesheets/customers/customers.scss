@@ -28,3 +28,15 @@
   width: 130px;
   margin: 15px;
 }
+
+// エラーメッセージ
+.field_with_errors {
+  display: contents;
+}
+#alert {
+  background-color: none;
+  border: none;
+}
+#alert ul li {
+  color: red;
+}
