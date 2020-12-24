@@ -1,11 +1,9 @@
 class Customers::DeliveriesController < ApplicationController
-  
   before_action :authenticate_customer!
+  before_action :set_delivery, only: [:edit, :update, :destroy]
   
   def index
     @delivery = Delivery.new
-    # @deliveries = Delivery.all
-    # @deliveries = Delivery.where(customer_id: current_customer.id)
     @deliveries = current_customer.deliveries
   end
   
@@ -21,21 +19,17 @@ class Customers::DeliveriesController < ApplicationController
   end
 
   def destroy
-    @delivery = Delivery.find(params[:id])
     @delivery.destroy
      redirect_to customers_deliveries_path
   end
 
   def edit
-    @delivery = Delivery.find(params[:id])
   end
 
   def update
-    @delivery = Delivery.find(params[:id])
     if @delivery.update(delivery_params)
       redirect_to customers_deliveries_path
     else
-      #@delivary = Delivery.find(params[:id])
       render :edit
     end
   end
@@ -45,4 +39,7 @@ class Customers::DeliveriesController < ApplicationController
     params.require(:delivery).permit(:postcode, :address, :name, :customer_id)
   end
   
+  def set_delivery
+    @delivery = Delivery.find(params[:id])
+  end
 end
