@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    image { "no-image.png" }
+    image { File.open('./app/assets/images/no-image.png') }
     item_name { "ロールケーキ" }
     explanation { "ロールケーキ" }
     non_taxed_price { 100 }
