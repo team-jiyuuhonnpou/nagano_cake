@@ -39,13 +39,13 @@
         <h3>ようこそ、<%= current_customer.last_name + current_customer.first_name %>さん！</h3>
       </li>
       <li>
-        <%= link_to "マイページ", customers_customer_path(current_customer), class: "btn btn-malformation btn-outline-secondary btn-sm w-auto" %>
+        <%= link_to "マイページ", customers_customer_path, class: "btn btn-malformation btn-outline-secondary btn-sm w-auto" %>
       </li>
       <li>
         <%= link_to "商品一覧", customers_items_path, class: "btn btn-malformation btn-outline-secondary btn-sm w-auto" %>
       </li>
       <li>
-        <%= link_to "カート", customers_cart_items_path(current_customer), class: "btn btn-malformation btn-outline-secondary btn-sm w-auto" %>
+        <%= link_to "カート", customers_cart_items_path, class: "btn btn-malformation btn-outline-secondary btn-sm w-auto" %>
       </li>
       <li>
         <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-malformation btn-outline-secondary btn-sm w-auto" %>
