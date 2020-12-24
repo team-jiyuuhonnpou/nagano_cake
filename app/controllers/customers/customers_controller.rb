@@ -1,6 +1,5 @@
 class Customers::CustomersController < ApplicationController
-
-  #before_action :authenticate_customer!
+  before_action :authenticate_customer!
 
   def show
   end
@@ -31,6 +30,4 @@ class Customers::CustomersController < ApplicationController
   def customer_params
     params.require(:customer).permit(:last_name, :first_name, :kana_last_name, :kana_first_name, :postcode, :street_address, :phone_number, :email, :encrypted_password)
   end
-  
-  
 end
