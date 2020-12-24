@@ -5,9 +5,9 @@
       <div class="text-center">
        <p>本日の注文件数</p>
          <%= link_to admins_orders_path do %>
-             <% if @orders.where('date >= ?', Date.today) %>
+             <!--% if @orders.where('created_at >= ?', Date.today) %-->
                  <%= @orders.count %>件
-             <% end %>
+             <!--% end %-->
          <% end %>
       </div>
   </div>
