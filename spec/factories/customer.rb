@@ -8,7 +8,7 @@ FactoryBot.define do
     email { "test@icloud.com" }
     postcode { "1000000" }
     street_address { "東京都" }
-    phone_number { "123456789" }
+    phone_number { "12345678910" }
     is_unsubscribed { false }
   end
 end
