@@ -10,7 +10,7 @@
         <div>
           <h3>支払方法</h3>
           <p style="margin-left:30px;">
-          <%= f.radio_button :payment_method, "クレジットカード" %>
+          <%= f.radio_button :payment_method, "クレジットカード", id: 'credit' %>
           <%= f.label :payment_method, "クレジットカード", value: "クレジットカード" %></br>
           <%= f.radio_button :payment_method, "銀行振込" %>
           <%= f.label :payment_method, "銀行振込", value: "銀行振込" %></br>
