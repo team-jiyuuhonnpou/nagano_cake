@@ -5,7 +5,7 @@
     <% if admin_signed_in? %>
       <%= link_to image_tag('logo.png'), admins_homes_top_path, :width => '40', :height => '10'%>
     <% else %>
-      <%= link_to image_tag('logo.png'), '/', :width => '40', :height => '10'%>
+      <%= link_to image_tag('logo.png'), '/', :width => '40', :height => '10', id: "customer_logo"%>
     <% end %>
      </div>
    <!--/ul-->
