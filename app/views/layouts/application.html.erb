@@ -15,12 +15,23 @@
   </head>
 
   <body>
+    <script src="jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/footerFixed.js"></script> 
+    
     <div id="wrapper">
       <div class="header">
+        <div class="top">
         <%= render "layouts/header" %>
       </div>
       <%= yield %>
-
+      
+      
+    <!-- footer -->
+    <footer id="footer" class="text-center">
+      <p>Copyright © naganoCAKE Inc. All Rights Reserved.</p>
+    </footer>
+    </div>
     </div>
   </body>
 </html>

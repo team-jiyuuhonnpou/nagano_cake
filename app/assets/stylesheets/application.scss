@@ -35,6 +35,7 @@
 
 .container {
   height: 100%;
+  background: #fffcf7;
 }
 
 .btn-primary {
@@ -103,12 +104,6 @@ body {
   height: 100%;
 }
 
-#wrapper {
-  width: 100%;
-  position: relative;
-  height: 100%;
-}
-
 .btn,
 a.btn,
 button.btn {
@@ -156,4 +151,12 @@ a.btn-malformation:hover {
   list-style: none;
 }
 
+footer {
+  background-color: #5A7302;
+  color: #F2DCC2;
+  height: 30px;
+}
 
+footer p {
+  mergin-top: 0 auto;
+}
