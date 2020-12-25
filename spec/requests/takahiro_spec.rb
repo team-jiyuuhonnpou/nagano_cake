@@ -212,16 +212,15 @@ RSpec.describe '管理者' do
 
   describe '会員一覧画面' do
 
-    #customer側とadminn側の設定が違うため後で見直し
-    #it "先ほど退会したユーザが「退会済」になっている" do
-      #sign_in @customer
-      #visit edit_customers_customer_path(@customer.id)
-      #click_on '退会する'
-      #click_on '退会する'
-      #sign_in @admin
-      #visit admins_customers_path
-      #expect(page).to have_content '退会済'
-    #end
+    it "先ほど退会したユーザが「退会済」になっている" do
+      sign_in @customer
+      visit edit_customers_customer_path(@customer.id)
+      click_on '退会する'
+      click_on '退会する'
+      sign_in @admin
+      visit admins_customers_path
+      expect(page).to have_content '退会済'
+    end
 
     #classかidを付与しないと設定できないため後で見直し
     #it "会員情報詳細画面に遷移する" do
