@@ -142,4 +142,20 @@ RSpec.describe "④登録情報変更〜退会のテスト[ECサイト]" do
       end
     end
   end
+  
+  describe 'カート画面' do
+    before do
+      visit "/customers/items/#{@item.id}"
+      select "5", from: "cart_item[amount]"
+      click_button 'カートに入れる'
+    end
+    context '次に進むボタンを押下する' do
+      before do
+        click_link '情報入力に進む'
+      end
+      it 'カート画面に遷移する' do
+        expect(page).to have_current_path "/customers/orders/new"
+      end
+    end
+  end
 end
