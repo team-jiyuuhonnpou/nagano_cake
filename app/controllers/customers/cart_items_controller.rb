@@ -1,5 +1,4 @@
 class Customers::CartItemsController < ApplicationController
-
   before_action :authenticate_customer!
 
   def index
@@ -12,9 +11,8 @@ class Customers::CartItemsController < ApplicationController
 
   def create
     @cart_item = CartItem.new(cart_item_params)
-    # @cart_item.item_id =
     @cart_item.customer_id = current_customer.id
-    @cart_item.save!
+    @cart_item.save
       redirect_to customers_cart_items_path
   end
 
