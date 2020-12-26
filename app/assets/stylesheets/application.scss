@@ -191,7 +191,7 @@ footer p {
   border: none;
 }
 
-.btn-3 {
+.btn-danger {
   background: #8c4130; //ボタンの背景色
   color: #f2f2f2; //ボタンのテキストの色
   border: none;
@@ -205,13 +205,13 @@ footer p {
 
 .btn-1:hover, .btn-1:focus, .btn-1:active, .btn-1.active, .open>.dropdown-toggle.btn-1,
 .btn-2:hover, .btn-2:focus, .btn-2:active, .btn-2.active, .open>.dropdown-toggle.btn-2,
-.btn-4:hover, .btn-4:focus, .btn-4:active, .btn-4.active, .open>.dropdown-toggle.btn-4 {
+.btn-4:hover, .btn-defalut:focus, .btn-4:active, .btn-4.active, .open>.dropdown-toggle.btn-4 {
     color: #bf7d56;
     background-color: #f2f2f2;
     border: none;
 }
 
-.btn-3:hover, .btn-3:focus, .btn-3:active, .btn-3.active, .open>.dropdown-toggle.btn-3 {
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
     color: #F2A950;
     background-color: #fffcf7;
     border: none;

@@ -5,7 +5,7 @@
         <strong class="cart-item-title">ショッピングカート</strong></h5>
       <div class="col-lg-3 offset-lg-5">
       <% if @cart_items.exists? %>
-        <%= link_to 'カートを空にする', "/customers/cart_items/destroy_all", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-3" %>
+        <%= link_to 'カートを空にする', "/customers/cart_items/destroy_all", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-danger" %>
       <% end %>
       </div>
     </div>
@@ -33,7 +33,7 @@
                 <% end %>
               </td>
               <td><%= ((cart_item.item.non_taxed_price * 1.1).floor * cart_item.amount).to_s(:delimited) %></td>
-              <td class="text-center"><%= link_to '削除する', "/customers/cart_items/#{cart_item.id}", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-sm btn-3 px-3"%></td>
+              <td class="text-center"><%= link_to '削除する', "/customers/cart_items/#{cart_item.id}", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-sm btn-danger px-3"%></td>
             </tr>
           <% end %>
         <% else %>
