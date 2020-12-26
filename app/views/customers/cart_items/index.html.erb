@@ -1,7 +1,8 @@
 <div class="top">
   <div class="container">
     <div class="row pt-5 pb-4">
-      <h5 class="col-lg-3 offset-lg-1"><strong class="cart-item-title px-3">ショッピングカート</strong></h5>
+      <h5 class="col-lg-3 offset-lg-1">
+        <strong class="cart-item-title">ショッピングカート</strong></h5>
       <div class="col-lg-3 offset-lg-5">
       <% if @cart_items.exists? %>
         <%= link_to 'カートを空にする', "/customers/cart_items/destroy_all", method: :delete, "data-confirm" => '本当に削除しますか？', class: "btn btn-danger" %>
