@@ -21,15 +21,40 @@
   flex-wrap: wrap;
 }
 
-.customers-title-name{
+.customers-title-name {
   margin-left: 15%;
   padding-left: 15px;
   padding-right: 15px;
   font-size: x-large;
-  background-color: #F2A950;
-  text-align:center;
+  //background-color: #F2A950;
+  text-align: center;
   display: inline-block;
+  
+  position: relative;
+  display: inline-block;
+  padding: 0 65px;
+  text-align: center;
 }
+
+.customers-title-name:before,
+.customers-title-name:after {
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 50px;
+  height: 6px;
+  content: '';
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+}
+
+.customers-title-name:before {
+  left: 0;
+}
+
+.customers-title-name:after {
+  right: 0;
+}
+
 
 .pagination{
   justify-content: center;

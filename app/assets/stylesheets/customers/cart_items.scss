@@ -4,8 +4,32 @@
 
 // カート画面（index）
 .cart-item-title {
-  background-color: #F2A950;
+  //background-color: #F2A950;
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+  text-align: center;
 }
+
+.cart-item-title:before,
+.cart-item-title:after {
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 50px;
+  height: 6px;
+  content: '';
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+}
+
+.cart-item-title:before {
+  left: 0;
+}
+
+.cart-item-title:after {
+  right: 0;
+}
+
 .cart-item-table {
   table-layout: fixed;
 }

@@ -17,20 +17,22 @@
   <body>
     <script src="jquery.min.js"></script>
     <script src="app.js"></script>
-    <script type="text/javascript" src="../assets/javascripts/footerFixed.js"></script> 
-    
+    <script type="text/javascript" src="../assets/javascripts/footerFixed.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+
     <div id="wrapper">
       <div class="header">
         <div class="top">
         <%= render "layouts/header" %>
-      </div>
-      <%= yield %>
-      
-      
+        </div>
+        <%= yield %>
+
+
     <!-- footer -->
-    <footer id="footer" class="text-center">
-      <p>Copyright © naganoCAKE Inc. All Rights Reserved.</p>
-    </footer>
+      <footer id="footer" class="text-center">
+        <p>Copyright © naganoCAKE Inc. All Rights Reserved.</p>
+      </footer>
     </div>
     </div>
   </body>
