@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins
   devise_for :customers, :controllers => {
     :sessions => 'customers/sessions'
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     get '/orders/thanks' => 'orders#thanks'
     resources :orders, only: [:new, :create, :index, :show]
     post '/orders/confirm' => 'orders#confirm'
-   
+
     resources :items, only: [:index, :show]
     get '/items/genre_search/:id' => 'items#genre_search'
     resource :customer, only: [:show, :edit, :update]

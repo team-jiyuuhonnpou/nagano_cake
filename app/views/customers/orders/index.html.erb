@@ -31,7 +31,7 @@
               <%= number_with_delimiter(order.payment+order.fee) %>円
             </td>
             <td><%= order.status %></td>
-            <td id="order_index_button"><%= link_to "表示する", customers_order_path(order.id), class: "btn btn-primary" %></td>
+            <td id="order_index_button"><%= link_to "表示する", customers_order_path(order.id), class: "btn btn-1" %></td>
         <% end %>
         </tbody>
       </table>

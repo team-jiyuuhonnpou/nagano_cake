@@ -39,49 +39,49 @@
   background: #fffcf7;
 }
 
-.btn-primary {
+.btn-1 {
   background: #93A608; //ボタンの背景色
   color: #fffcf7; //ボタンのテキストの色
   border: none;
 }
 
-.btn-success {
+.btn-2 {
   background: #5A7302; //ボタンの背景色
   color: #fffcf7; //ボタンのテキストの色
   border: none;
 }
 
-.btn-danger {
+.btn-3 {
   background: #F2A950; //ボタンの背景色
   color: #fffcf7; //ボタンのテキストの色
   border: none;
 }
 
-.btn-default {
+.btn-4 {
   background: #D0D8A2; //ボタンの背景色
   color: #594B42; //ボタンのテキストの色
   border: none;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+.btn-1:hover, .btn-1:focus, .btn-1:active, .btn-1.active, .open>.dropdown-toggle.btn-1 {
     color: #93A608;
     background-color: #fffcf7;
     border: none;
 }
 
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+.btn-2:hover, .btn-2:focus, .btn-2:active, .btn-2.active, .open>.dropdown-toggle.btn-2 {
     color: #5A7302;
     background-color: #fffcf7;
     border: none;
 }
 
-.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+.btn-3:hover, .btn-3:focus, .btn-3:active, .btn-3.active, .open>.dropdown-toggle.btn-3 {
     color: #F2A950;
     background-color: #fffcf7;
     border: none;
 }
 
-.btn-default:hover, .btn-defalut:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+.btn-4:hover, .btn-defalut:focus, .btn-4:active, .btn-4.active, .open>.dropdown-toggle.btn-4 {
     color: #D0D8A2;
     background-color: #594B42;
     border: none;
@@ -179,39 +179,39 @@ footer p {
   background: #f2f2f2;
 }
 
-.btn-primary {
+.btn-1 {
   background: #bf7d56; //ボタンの背景色
   color: #f2f2f2; //ボタンのテキストの色
   border: none;
 }
 
-.btn-success {
+.btn-2 {
   background: #bf7d56; //ボタンの背景色
   color: #f2f2f2; //ボタンのテキストの色
   border: none;
 }
 
-.btn-danger {
+.btn-3 {
   background: #8c4130; //ボタンの背景色
   color: #f2f2f2; //ボタンのテキストの色
   border: none;
 }
 
-.btn-default {
+.btn-4 {
   background: #bf7d56; //ボタンの背景色
   color: #f2f2f2; //ボタンのテキストの色
   border: none;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary,
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success,
-.btn-default:hover, .btn-defalut:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+.btn-1:hover, .btn-1:focus, .btn-1:active, .btn-1.active, .open>.dropdown-toggle.btn-1,
+.btn-2:hover, .btn-2:focus, .btn-2:active, .btn-2.active, .open>.dropdown-toggle.btn-2,
+.btn-4:hover, .btn-4:focus, .btn-4:active, .btn-4.active, .open>.dropdown-toggle.btn-4 {
     color: #bf7d56;
     background-color: #f2f2f2;
     border: none;
 }
 
-.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+.btn-3:hover, .btn-3:focus, .btn-3:active, .btn-3.active, .open>.dropdown-toggle.btn-3 {
     color: #F2A950;
     background-color: #fffcf7;
     border: none;
@@ -256,6 +256,7 @@ button.btn {
   text-decoration: none;
   letter-spacing: 0.1em;
   color: #f2f2f2;
+  background-color: #bf7d56;
   border-radius: 0.5rem;
 }
 
