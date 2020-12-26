@@ -1,7 +1,7 @@
 <div class="top">
   <div class="container">
     <div class="row">
-      <h5 class="col-lg-4 offset-lg-1 mt-5 mb-0"><strong class="customer-title">新規会員登録</strong></h5>
+      <h5 class="col-lg-6 offset-lg-1 mt-5 mb-0"><strong class="customer-title">新規会員登録</strong></h5>
     </div>
     <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
       <%= render "customers/shared/error_messages", resource: resource %>
@@ -46,12 +46,12 @@
       </div>
       <div class="row mt-3">
         <div class="actions col-lg-12 text-center">
-          <%= f.submit "新規登録", class: "btn btn-success px-5" %>
+          <%= f.submit "新規登録", class: "btn btn-2 px-5" %>
         </div>
       </div>
     <% end %>
     <div class="row">
-      <h5 class="col-lg-3 offset-lg-1"><strong class="customer-title">既に登録済みの方</strong></h5>
+      <h5 class="col-lg-6  offset-lg-1"><strong class="customer-title">既に登録済みの方</strong></h5>
     </div>
     <div class="row mt-1">
       <div class="offset-lg-2">
