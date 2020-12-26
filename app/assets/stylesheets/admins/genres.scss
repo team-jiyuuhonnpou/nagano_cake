@@ -1,0 +1,64 @@
+// Place all the styles related to the admins::genres controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.genre-table {
+  margin: auto;
+  width: 50%;
+  border: none;
+}
+
+.genre-search-table{
+  width: 100%;
+}
+
+/*
+.genre-search-table th {
+  background-color: #F2DCC2;
+}
+
+.genre-search-table td {
+  width: 100%;
+  line-height: 2.5em;
+  text-align: center;
+  color: #594B42;
+  .editlink {
+    text-decoration: none;
+    color:  #93A063;
+  }
+}
+  
+.genre-search-table td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+} 
+
+.table-hover {
+  background-color: #f49d9d;
+}
+*/
+
+.genre-search-table th {
+  background-color: #8c4130;
+  color: #f2f2f2;
+}
+
+.genre-search-table td {
+  width: 100%;
+  line-height: 2.5em;
+  text-align: center;
+  color: #2E1A0C;
+  background-color: #EDD5D0;
+  text-weight: bolder;
+}
+  
+.genre-search-table td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+} 
+
+.table-hover {
+  background-color: #f49d9d;
+}

@@ -1,0 +1,52 @@
+<!---Admins::Items#show--->
+<div class="admins-item-body">
+  
+  <!---タイトル--->
+  <strong class="admins-title-name">商品詳細</strong>
+  
+  <div class="container">
+    <div class="row admin-item-show-body">
+      
+      <!---商品写真--->
+      <div class="col-lg-4">
+        <%= attachment_image_tag(@item, :image, size:'350x250') %>
+      </div>
+      
+      <!---商品情報-->
+      <div class="col-lg-7">
+        <table class="admins_item_show_table">
+          <tr>
+            <th class="admin-item-name">商品名</th>
+            <td class="admin-item-explanation"><%= @item.item_name %></td>
+          </tr>
+          <tr>
+            <th class="admin-item-name">商品説明</th>
+            <td class="admin-item-explanation"><%= @item.explanation %></td>
+          </tr>
+          <tr>
+            <th class="admin-item-name">ジャンル</th>
+            <td class="admin-item-explanation"><%= @item.genre.name %></td>
+          </tr>
+          <tr>
+            <% price = (@item.non_taxed_price * 1.1) .floor %>
+            <th class="admin-item-name">税込価格(税抜価格)</th>
+            <td class="admin-item-explanation"><%= price.to_s(:delimited) %>(<%= @item.non_taxed_price.to_s(:delimited) %>)円</td>
+          </tr>
+          <tr>
+            <th class="admin-item-name">販売ステータス </th>
+            <% if @item.is_active == true %>
+              <td class="admin-item-explanation">販売中</td>
+            <% else %>
+              <td class="admin-item-explanation">販売停止中</td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-lg-1 admins-item-edit">
+        <%= link_to "編集する", edit_admins_item_path(@item), class: "btn btn-primary admins-item-edit-btn" %>
+      </div>
+
+    </div>
+  </div>
+</div>

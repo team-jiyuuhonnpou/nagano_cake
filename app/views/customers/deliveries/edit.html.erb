@@ -1,0 +1,29 @@
+<div class="top">
+  <div class="container">
+    <div class="row">
+      <h5 class="col-lg-4 offset-lg-2 mt-5 mb-1"><strong class="delivery-title">配送先編集</strong></h5>
+    </div>
+    <div class="row">
+      <div class="error-message offset-lg-2">
+        <%= render "layouts/error_msg", resource: @delivery %>
+      </div>
+    </div>
+    <%= form_with model:@delivery, url: customers_delivery_path(@delivery), method: :patch, local:true do |f| %>
+      <div class="form-group row">
+        <%= f.label :postcode, '郵便番号(ハイフンなし)', class: "col-lg-3" %>
+        <%= f.text_field :postcode, class: "col-lg-3" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :address, '住所', class: "col-lg-3" %>
+        <%= f.text_field :address, class: "col-lg-7" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :name, '宛名', class: "col-lg-3" %>
+        <%= f.text_field :name, class: "col-lg-3" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "編集する", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

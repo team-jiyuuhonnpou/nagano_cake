@@ -1,0 +1,57 @@
+<div class="top">
+<br>
+<div　class="row">
+  <div class="col-xl-12">
+    <%= render "layouts/error_msg", resource: @customer %>
+    <strong class="admins-title-name">
+      <%= @customer.last_name + @customer.first_name %>さんの会員情報編集
+    </strong>
+  </div>
+
+  <div class="col-xl-12 admins-customer-box">
+
+    <%= form_with model: @customer, url:admins_customer_path(@customer), local: true , method: :patch do |f| %>
+
+    <dl>
+      <dt><%= f.label :"会員ID" %></dt>
+      <dd><%= f.label :"#{@customer.id}" %></dd>
+
+      <dt><%= f.label :"氏名" %></dt>
+      <dd><%= f.text_field :last_name %>
+          <%= f.text_field :first_name %>
+      </dd>
+
+      <dt><%= f.label :"フリガナ"%></dt>
+      <dd><%= f.text_field :kana_last_name %>
+          <%= f.text_field :kana_first_name %>
+      </dd>
+
+      <dt><%= f.label :"郵便番号" %></dt>
+      <dd><%= f.text_field :postcode %></dd>
+
+      <dt><%= f.label :"住所" %></dt>
+      <dd><%= f.text_field :street_address %></dd>
+
+      <dt><%= f.label :"電話番号" %></dt>
+      <dd><%= f.text_field :phone_number %></dd>
+
+      <dt><%= f.label :"メールアドレス" %></dt>
+      <dd><%= f.text_field :email%></dd>
+
+      <dt><%= f.label :"会員ステータス" %></dt>
+      <dd><%= f.radio_button :is_unsubscribed, false %>
+          <%= f.label :is_unsubscribed, "有効", {value: :false} %>
+          <%= f.radio_button :is_unsubscribed, true %>
+          <%= f.label :is_unsubscribed, "退会済み", {value: :true}%>
+      </dd>
+
+    </dl>
+
+    <div class="actions col-xl-12">
+      <%= f.submit '変更を保存する', class: "btn btn-success btn-sm w-auto" %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+</div>

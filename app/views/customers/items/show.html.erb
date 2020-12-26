@@ -1,0 +1,25 @@
+<div top>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div style="margin-top: 50px;">  <%= render 'layouts/genre_search', genres: @genres %> </div>
+    </div>
+    <div class="col-md-4 offset-md-1">
+      <p style="margin-top: 50px;"><%= attachment_image_tag @item, :image, :fill, 350, 200, format: 'jpeg' %></p>
+    </div>
+    <div class="col-md-4">
+      <h4 style="margin-top: 50px; margin-bottom: 20px;"><%= @item.item_name %></h4>
+      <p style="margin-bottom:20px;"><%= @item.explanation %></p>
+      <p style="margin-bottom: 50px;">
+        <% price = (@item.non_taxed_price * 1.1).floor %>
+        ￥<%= price %>（税込み）
+      </p>
+      <%= form_with model: @cart_item, url: customers_cart_items_path, local:true do |f| %>
+      <%= f.select :amount, [["個数選択", "1"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], class: "amount-select-button" %>
+      <%= f.hidden_field :item_id, :value => @item.id %>
+      <%= f.submit 'カートに入れる', class: "btn btn-success" %>
+     <% end %>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,302 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #594B42;
+  background: #fffcf7;
+  font-family: 'メイリオ','游ゴシック体', 'ヒラギノ角ゴ ProN W6','ヒラギノ角ゴ ProN W3';
+}
+
+
+.table {
+  color: #594B42;
+  border-color: #594B42;
+  background: #fffcf7;
+}
+
+.container {
+  height: 100%;
+  background: #fffcf7;
+}
+
+.btn-primary {
+  background: #93A608; //ボタンの背景色
+  color: #fffcf7; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-success {
+  background: #5A7302; //ボタンの背景色
+  color: #fffcf7; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-danger {
+  background: #F2A950; //ボタンの背景色
+  color: #fffcf7; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-default {
+  background: #D0D8A2; //ボタンの背景色
+  color: #594B42; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #93A608;
+    background-color: #fffcf7;
+    border: none;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+    color: #5A7302;
+    background-color: #fffcf7;
+    border: none;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+    color: #F2A950;
+    background-color: #fffcf7;
+    border: none;
+}
+
+.btn-default:hover, .btn-defalut:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: #D0D8A2;
+    background-color: #594B42;
+    border: none;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  //font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  //font-size: 1rem;
+  //font-weight: 700;
+  //line-height: 1.5;
+  //position: relative;
+  display: inline-block;
+  //padding: 1rem 4rem;
+  cursor: pointer;
+  //-webkit-user-select: none;
+  //-moz-user-select: none;
+  //-ms-user-select: none;
+  //user-select: none;
+  //-webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #F2DCC2;
+  border-radius: 0.5rem;
+}
+
+//hover前設定
+a.btn-malformation {
+  font-size: 1rem;
+  padding: 2rem 3rem;
+
+  color: #F2DCC2;
+  border-radius: 100% 80px / 80px 100%; /*デザイン調整
+  background-color: #5A7302;
+}
+
+//hover時設定
+a.btn-malformation:hover {
+  color: #F2DCC2;
+  background-color: #93A603;
+  border-radius: 60% 80% / 100% 80%; /*デザイン調整
+}
+
+.header-ul {
+  display: flex;
+  margin: 20px;
+  list-style: none;
+}
+
+footer {
+  background-color: #5A7302;
+  color: #F2DCC2;
+  height: 30px;
+}
+
+footer p {
+  mergin-top: 0 auto;
+}
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #59322E;
+  background: #fcfcfc;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+
+.table {
+  color: #59322E;
+  //border-color: #59322E;
+  background: #f2f2f2;
+}
+
+.btn-primary {
+  background: #bf7d56; //ボタンの背景色
+  color: #f2f2f2; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-success {
+  background: #bf7d56; //ボタンの背景色
+  color: #f2f2f2; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-danger {
+  background: #8c4130; //ボタンの背景色
+  color: #f2f2f2; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-default {
+  background: #bf7d56; //ボタンの背景色
+  color: #f2f2f2; //ボタンのテキストの色
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary,
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success,
+.btn-default:hover, .btn-defalut:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: #bf7d56;
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+    color: #F2A950;
+    background-color: #fffcf7;
+    border: none;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /*font-size: 62.5%;*/
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  /*font-size: 1rem;*/
+  /*font-weight: 700;*/
+  /*line-height: 1.5;*/
+  /*position: relative;*/
+  display: inline-block;
+  /*padding: 1rem 4rem;*/
+  cursor: pointer;
+  /*-webkit-user-select: none;*/
+  /*-moz-user-select: none;*/
+  /*-ms-user-select: none;*/
+  /*user-select: none;*/
+  /*-webkit-transition: all 0.3s;*/
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #f2f2f2;
+  border-radius: 0.5rem;
+}
+
+/*hover前設定*/
+a.btn-malformation {
+  font-size: 1rem;
+  padding: 2rem 3rem;
+
+  color: #f2f2f2;
+  border-radius: 100% 80px / 80px 100%; /*デザイン調整*/
+  background-color: #59322e;
+}
+
+/*hover時設定*/
+a.btn-malformation:hover {
+  color: #f2f2f2;
+  background-color: #8c4130;
+  border-radius: 60% 80% / 100% 80%; /*デザイン調整*/
+}
+
+.header-ul {
+  display: flex;
+  margin: 20px;
+  list-style: none;
+}
+
+footer {
+  background-color: #8c4130;
+  color: #f2f2f2;
+  height: 30px;
+}
+
+footer p {
+  mergin-top: 0 auto;
+}
+
+/*リンクカラー変更*/
+a {
+  color: #8C4130;
+}
+
+a:hover {
+  color: #BF7D56;
+}

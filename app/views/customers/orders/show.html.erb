@@ -1,0 +1,73 @@
+<div class="order-detail" style="padding-top:40px;">
+<h4 style class="admins-title-name">注文履歴詳細</h4>
+</div>
+
+<div class="order-info">
+<h4>注文情報</h4>
+  <table class="order-detail-table">
+	<tr>
+    	<th style="width: 100px;">注文日</th>
+    	<td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+    </tr>
+    <tr>
+    	<th>配送先</th>
+    </thead>
+    	<td style="width: 500px;">
+    		〒<%= @order.postcode %><br>
+    		<%= @order.address %><br>
+    		<%= @order.name %>
+    	</td>
+    </tr>
+    <tr>
+    	<th>支払方法</th>
+    	<td><%= @order.payment_method %></td>
+    </tr>
+    <tr>
+    	<th>ステータス</th>
+    	<td><%= @order.status %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="order-charge">
+  <h4>請求情報</h4>
+  <table class="order-detail-table">
+	<tr>
+    	<th style="width: 100px;">商品合計</th>
+    	<td style="width: 200px;"><%= number_with_delimiter(@order.payment) %></td>
+    </tr>
+    <tr>
+    	<th>配送料</th>
+    	<td><%= number_with_delimiter(@order.fee) %></td>
+    </tr>
+    <tr>
+    	<th>ご請求額</th>
+    	<td><%= number_with_delimiter(@order.payment + @order.fee) %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="order-detail-item">
+  <h4>注文内容</h4>
+  <table class="order-detail-table">
+	<thead>
+    <tr>
+      <th style="width: 400px;">商品</th>
+      <th style="width: 150px;">単価（税込）</th>
+      <th style="width: 60px;">個数</th>
+      <th style="width: 60px;">小計</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order_items.each do |order_item| %>
+    <% order_total_price = (order_item.amount * order_item.item.non_taxed_price * 1.1).floor %>
+      <tr>
+       <td><%= order_item.item.item_name %></td>
+    	 <td><%= number_with_delimiter((order_item.item.non_taxed_price * 1.1).floor) %></td>
+    	 <td><%= order_item.amount %></td>
+    	 <td><%= number_with_delimiter(order_total_price) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>

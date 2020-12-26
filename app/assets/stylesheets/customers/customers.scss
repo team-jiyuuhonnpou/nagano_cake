@@ -1,0 +1,68 @@
+// Place all the styles related to the customers::customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+// マイページ（show）
+.customer-title {
+  //margin-left: 15%;
+  //background-color: #F2A950;
+  position: relative;
+  display: inline-block;
+  padding: 0 65px;
+  text-align: center;
+}
+
+.customer-title:before,
+.customer-title:after {
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 50px;
+  height: 6px;
+  content: '';
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+}
+
+.customer-title:before {
+  left: 0;
+}
+
+.customer-title:after {
+  right: 0;
+}
+
+.customer-table tr th, .customer-table tr td {
+  border: 1px solid;
+}
+.customer-table tr th {
+  font-weight: normal;
+  background-color: #ddd;
+}
+
+// 退会ページ（unsubscribe）
+.withdrawal-content {
+  margin-top: 160px;
+}
+.withdrawal-btn .btn {
+  width: 130px;
+  margin: 15px;
+}
+
+// エラーメッセージ
+.field_with_errors {
+  display: contents;
+}
+#alert {
+  background-color: none;
+  border: none;
+}
+#alert ul li {
+  color: red;
+}

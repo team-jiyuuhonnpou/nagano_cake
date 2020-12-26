@@ -1,0 +1,53 @@
+// Place all the styles related to the customers::deliveries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 配送先一覧ページ
+.delivery-title {
+  //background-color: #F2A950;
+  position: relative;
+  display: inline-block;
+  padding: 0 65px;
+  text-align: center;
+}
+
+.delivery-title:before,
+.delivery-title:after {
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 50px;
+  height: 6px;
+  content: '';
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+}
+
+.delivery-title:before {
+  left: 0;
+}
+
+.delivery-title:after {
+  right: 0;
+}
+
+.admins-order-body .admins-order-index-table {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+
+.delivery-table thead tr th, .delivery-table tbody tr td {
+  border: 1px solid;
+  vertical-align: middle;
+}
+.delivery-table tr th {
+  font-weight: normal;
+  background-color: #ddd;
+}

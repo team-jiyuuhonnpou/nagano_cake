@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xl-12">
+    <strong class="admins-title-name">管理者画面</strong>
+    <br>
+      <div class="text-center">
+       <p><strong>本日の注文件数</p></strong>
+         <%= link_to admins_orders_path do %>
+            <!--homes$topで注文件数取得-->
+            <%= @orders.count %>件
+         <% end %>
+         
+       <div class="thanks-visual col-lg-12 ">
+        <!--visualは件数によって変化-->
+        <% if @orders.count < 6 %>
+            <!--0~5は緑帽子-->
+            <%= image_tag '1-5.png', size: '640x400', class: "text-center" %>
+        <% elsif @orders.count < 11 %>
+            <!--6~10は黄色帽子-->
+            <%= image_tag '6-10.png', size: '640x400', class: "text-center" %>
+        <% else %>
+            <!--11~は赤帽子-->
+            <%= image_tag '11~.png', size: '640x400', class: "text-center" %>
+        <% end %>
+       </div>
+       
+      </div>
+      
+  </div>
+</div>

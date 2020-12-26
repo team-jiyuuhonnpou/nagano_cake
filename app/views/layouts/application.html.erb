@@ -4,11 +4,36 @@
     <title>NaganoCake</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+
+    <script src="https://kit.fontawesome.com/42591157a3.js" crossorigin="anonymous"></script>
+
+
   </head>
 
   <body>
-    <%= yield %>
+    <script src="jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/footerFixed.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+
+    <div id="wrapper">
+      <div class="header">
+        <div class="top">
+        <%= render "layouts/header" %>
+        </div>
+        <%= yield %>
+
+
+    <!-- footer -->
+      <footer id="footer" class="text-center">
+        <p>Copyright © naganoCAKE Inc. All Rights Reserved.</p>
+      </footer>
+    </div>
+    </div>
   </body>
 </html>

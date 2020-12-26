@@ -1,0 +1,50 @@
+// Place all the styles related to the admins::customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.admins_customer_index_table {
+   margin: 0 auto;
+   width: 80%;
+}
+
+
+.admins-item-body .admins-custommer-show-table {
+   margin: 0 auto;
+   width: 60%;
+}
+
+.admins-custommer-show-table th,
+.admins-custommer-show-table td {
+  border: 0px solid;
+}
+
+
+form {
+  padding:30px 50px;
+}
+
+form dl dt {
+  width: 165px;
+  padding:10px 0;
+  float:left;
+  clear:both;
+}
+
+form dl dd {
+  padding:10px 0;
+}
+
+.admins-customer-box {
+　display: block;
+  margin-right: auto;
+  margin-left : auto;
+  top: 50%;
+　left: 50%;
+}
+
+.admins-customer-text {
+    float: right;
+    padding-right: 5%;
+    background-color: #5A7302;
+    color: #F2DCC2;
+    text-align: center;
+}
