@@ -1,17 +1,17 @@
 <!---Admins::Items#show--->
 <div class="admins-item-body">
-  
+
   <!---タイトル--->
   <strong class="admins-title-name">商品詳細</strong>
-  
+
   <div class="container">
     <div class="row admin-item-show-body">
-      
+
       <!---商品写真--->
       <div class="col-lg-4">
         <%= attachment_image_tag(@item, :image, size:'350x250') %>
       </div>
-      
+
       <!---商品情報-->
       <div class="col-lg-7">
         <table class="admins_item_show_table">
@@ -44,7 +44,7 @@
       </div>
 
       <div class="col-lg-1 admins-item-edit">
-        <%= link_to "編集する", edit_admins_item_path(@item), class: "btn btn-primary admins-item-edit-btn" %>
+        <%= link_to "編集する", edit_admins_item_path(@item), class: "btn btn-1 admins-item-edit-btn" %>
       </div>
 
     </div>
