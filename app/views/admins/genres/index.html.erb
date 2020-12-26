@@ -14,7 +14,7 @@
             <%= f.label :is_active, "有効", {value: :true, style: "display: inline-block;"} %>
             <%= f.radio_button :is_active, false %>
             <%= f.label :is_active, "無効", {value: :false, style: "display: inline-block;"} %>
-          <%= f.submit "追加", class: "btn btn-success" %>
+          <%= f.submit "追加", class: "btn btn-2" %>
         </div>
       <% end %>
       </div>
@@ -39,7 +39,7 @@
               <% elsif genre.is_active == false %>
                 <td>無効</td>
               <% end %>
-              <td style="width:20%"><%= link_to "編集する", edit_admins_genre_path(genre), class: "btn btn-primary btn-sm w-15" %></td>
+              <td style="width:20%"><%= link_to "編集する", edit_admins_genre_path(genre), class: "btn btn-1 btn-sm w-15" %></td>
             </tr>
           <% end %>
          </tbody>
