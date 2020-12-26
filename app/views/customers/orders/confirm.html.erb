@@ -56,7 +56,7 @@
   <p>
     <%= @order.payment_method %>
   </p>
-  
+
   <h4>お届け先</h4>
   <p>
     <%= "〒" + @order.postcode %><br>
@@ -72,6 +72,6 @@
   <%= f.hidden_field :postcode, :value => @order.postcode %>
   <%= f.hidden_field :address, :value => @order.address %>
 <p style="text-align:center;">
-  <%= f.submit "購入を確定する", class: "btn btn-success" %>
+  <%= f.submit "購入を確定する", class: "btn btn-2" %>
 </p>
 <% end %>
